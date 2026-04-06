@@ -1,0 +1,2502 @@
+[
+  {
+    "ticket_id": "INC-200000",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 20:03:57",
+    "resolved_at": "2026-03-25 13:44:57",
+    "assignee": "Service Desk",
+    "description": "CRM Integration Adapter is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200001",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 23:55:57",
+    "resolved_at": "2026-03-24 04:10:57",
+    "assignee": "Ops Team",
+    "description": "Corporate VPN Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200002",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 18:20:57",
+    "resolved_at": "2026-03-26 17:21:57",
+    "assignee": "Network Team",
+    "description": "Identity Provider (SSO) is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200003",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-25 14:53:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200004",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-23 03:25:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Identity Provider (SSO) is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200005",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 18:48:57",
+    "resolved_at": "2026-03-23 22:13:57",
+    "assignee": "Service Desk",
+    "description": "Windows Patch Management is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200006",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 06:58:57",
+    "resolved_at": "2026-03-27 03:35:57",
+    "assignee": "Platform SRE",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200007",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 10:28:57",
+    "resolved_at": "2026-03-23 16:18:57",
+    "assignee": "Network Team",
+    "description": "Customer Notifications Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200008",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-26 17:09:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200009",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 13:57:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200010",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-22 05:19:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Windows Patch Management is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200011",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 03:21:57",
+    "resolved_at": "2026-03-27 11:16:57",
+    "assignee": "Service Desk",
+    "description": "Order Orchestration Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200012",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 07:20:57",
+    "resolved_at": "2026-03-27 14:25:57",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200013",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 21:30:57",
+    "resolved_at": "2026-03-24 00:24:57",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200014",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 17:06:57",
+    "resolved_at": "2026-03-26 20:23:57",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200015",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 18:10:57",
+    "resolved_at": "2026-03-25 06:12:57",
+    "assignee": "App Support",
+    "description": "Payroll Processing Engine is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200016",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 13:22:57",
+    "resolved_at": "2026-03-27 17:04:57",
+    "assignee": "Platform SRE",
+    "description": "Identity Provider (SSO) is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200017",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 08:03:57",
+    "resolved_at": "2026-03-23 00:48:57",
+    "assignee": "Ops Team",
+    "description": "CRM Integration Adapter is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200018",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 08:36:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Order Orchestration Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200019",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-25 04:39:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Identity Provider (SSO) is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200020",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-27 02:51:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200021",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-26 00:48:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Primary SAN Storage Cluster is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200022",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 19:23:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Customer Notifications Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200023",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 23:05:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Identity Provider (SSO) is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200024",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 06:39:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Customer Notifications Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200025",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-23 20:31:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Service Desk Portal is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200026",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 18:22:57",
+    "resolved_at": "2026-03-25 17:59:57",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200027",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 21:36:57",
+    "resolved_at": "2026-03-27 01:31:57",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200028",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 16:50:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200029",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 09:42:57",
+    "resolved_at": "2026-03-25 03:53:57",
+    "assignee": "Infra Team",
+    "description": "Payroll Processing Engine is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200030",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 15:24:57",
+    "resolved_at": "2026-03-23 12:33:57",
+    "assignee": "Network Team",
+    "description": "Primary SAN Storage Cluster is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200031",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 10:59:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Payroll Processing Engine is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200032",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 10:45:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "CRM Integration Adapter is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200033",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 18:32:57",
+    "resolved_at": "2026-03-26 07:46:57",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200034",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 21:23:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Windows Patch Management is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200035",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 16:02:57",
+    "resolved_at": "2026-03-25 13:23:57",
+    "assignee": "Infra Team",
+    "description": "Order Orchestration Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200036",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 20:52:57",
+    "resolved_at": "2026-03-27 03:16:57",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200037",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-24 21:21:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200038",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 23:28:57",
+    "resolved_at": "2026-03-27 04:49:57",
+    "assignee": "App Support",
+    "description": "Service Desk Portal is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200039",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-20 19:39:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200040",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-22 14:24:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Order Orchestration Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200041",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 21:56:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200042",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-21 03:32:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200043",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-22 02:00:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Identity Provider (SSO) is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200044",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-22 05:44:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Primary SAN Storage Cluster is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200045",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 16:46:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Corporate VPN Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200046",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 14:06:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Service Desk Portal is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200047",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 07:00:57",
+    "resolved_at": "2026-03-22 07:25:57",
+    "assignee": "Platform SRE",
+    "description": "Corporate VPN Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200048",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 02:11:57",
+    "resolved_at": "2026-03-22 01:52:57",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200049",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 14:35:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payroll Processing Engine is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200050",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 09:30:57",
+    "resolved_at": "2026-03-27 03:52:57",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200051",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-20 21:39:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Order Orchestration Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200052",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-21 08:32:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200053",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 08:07:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200054",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 01:02:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Primary SAN Storage Cluster is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200055",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 12:45:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Corporate VPN Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200056",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-21 20:56:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Payment API Gateway is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200057",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 09:44:57",
+    "resolved_at": "2026-03-23 12:00:57",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200058",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-23 01:18:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Order Orchestration Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200059",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-25 07:16:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payroll Processing Engine is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200060",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 19:21:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Customer Notifications Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200061",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 16:52:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Corporate VPN Service is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200062",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-22 06:41:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200063",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 14:52:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Primary SAN Storage Cluster is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200064",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-21 14:40:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Order Orchestration Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200065",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 02:24:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Identity Provider (SSO) is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200066",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 04:51:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200067",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 16:54:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200068",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 04:23:57",
+    "resolved_at": "2026-03-27 16:36:57",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200069",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-27 14:07:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200070",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-26 09:20:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200071",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 14:27:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200072",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-24 12:33:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Corporate VPN Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200073",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 17:14:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payroll Processing Engine is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200074",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-22 20:45:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Payment API Gateway is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200075",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-26 02:51:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Windows Patch Management is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200076",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-20 19:38:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200077",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 00:43:57",
+    "resolved_at": "2026-03-27 03:11:57",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200078",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 00:58:57",
+    "resolved_at": "2026-03-25 01:51:57",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200079",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 20:16:57",
+    "resolved_at": "2026-03-25 16:53:57",
+    "assignee": "Ops Team",
+    "description": "Customer Notifications Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200080",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 01:30:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Primary SAN Storage Cluster is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200081",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 02:01:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200082",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-25 18:15:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200083",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 02:56:57",
+    "resolved_at": "2026-03-24 04:06:57",
+    "assignee": "Infra Team",
+    "description": "Identity Provider (SSO) is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200084",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-21 15:10:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200085",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 03:02:57",
+    "resolved_at": "2026-03-26 07:26:57",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200086",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 03:55:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200087",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 20:56:57",
+    "resolved_at": "2026-03-26 15:16:57",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200088",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 15:40:57",
+    "resolved_at": "2026-03-27 07:29:57",
+    "assignee": "Ops Team",
+    "description": "Service Desk Portal is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200089",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-22 20:17:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Windows Patch Management is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200090",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-21 14:33:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Windows Patch Management is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200091",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 18:17:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200092",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 18:16:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Windows Patch Management is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200093",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-20 18:18:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Customer Notifications Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200094",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-23 23:57:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200095",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 22:39:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Order Orchestration Service is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200096",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-27 03:24:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Payroll Processing Engine is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200097",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-22 18:15:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200098",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 07:10:57",
+    "resolved_at": "2026-03-21 21:38:57",
+    "assignee": "Network Team",
+    "description": "Order Orchestration Service is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200099",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 00:52:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payroll Processing Engine is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200100",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 13:04:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Identity Provider (SSO) is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200101",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 07:04:57",
+    "resolved_at": "2026-03-25 03:03:57",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200102",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 17:39:57",
+    "resolved_at": "2026-03-27 04:24:57",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200103",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 06:25:57",
+    "resolved_at": "2026-03-23 19:12:57",
+    "assignee": "Ops Team",
+    "description": "Order Orchestration Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200104",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-20 19:21:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payroll Processing Engine is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200105",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 06:40:57",
+    "resolved_at": "2026-03-26 10:51:57",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200106",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-27 16:18:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200107",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-23 07:11:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Customer Notifications Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200108",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-26 04:10:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "CRM Integration Adapter is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200109",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 03:13:57",
+    "resolved_at": "2026-03-27 16:47:57",
+    "assignee": "App Support",
+    "description": "Primary SAN Storage Cluster is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200110",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 02:56:57",
+    "resolved_at": "2026-03-27 03:54:57",
+    "assignee": "Ops Team",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200111",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 08:59:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200112",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 19:51:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Primary SAN Storage Cluster is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200113",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 06:29:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200114",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 10:11:57",
+    "resolved_at": "2026-03-27 15:56:57",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200115",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 19:31:57",
+    "resolved_at": "2026-03-26 19:12:57",
+    "assignee": "Network Team",
+    "description": "Payroll Processing Engine is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200116",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 10:47:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200117",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 03:22:57",
+    "resolved_at": "2026-03-21 19:19:57",
+    "assignee": "Service Desk",
+    "description": "Order Orchestration Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200118",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-22 13:58:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200119",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-26 17:31:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Payment API Gateway is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200120",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 01:46:57",
+    "resolved_at": "2026-03-26 01:40:57",
+    "assignee": "Platform SRE",
+    "description": "Corporate VPN Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200121",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 14:54:57",
+    "resolved_at": "2026-03-23 04:49:57",
+    "assignee": "Ops Team",
+    "description": "Identity Provider (SSO) is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200122",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 03:10:57",
+    "resolved_at": "2026-03-26 03:36:57",
+    "assignee": "Ops Team",
+    "description": "Order Orchestration Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200123",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-23 14:28:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200124",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 17:14:57",
+    "resolved_at": "2026-03-22 07:04:57",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200125",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 01:36:57",
+    "resolved_at": "2026-03-27 16:37:57",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200126",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 15:45:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200127",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 05:12:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Corporate VPN Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200128",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 10:13:57",
+    "resolved_at": "2026-03-22 14:36:57",
+    "assignee": "Infra Team",
+    "description": "CRM Integration Adapter is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200129",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-22 04:28:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Customer Notifications Service is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200130",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-21 17:52:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200131",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 18:04:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200132",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 07:38:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "CRM Integration Adapter is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200133",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-24 02:29:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200134",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 01:52:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200135",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 16:56:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payment API Gateway is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200136",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 00:03:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Windows Patch Management is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200137",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 16:07:57",
+    "resolved_at": "2026-03-27 16:50:57",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200138",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 00:01:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Payment API Gateway is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200139",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 00:29:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200140",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 03:05:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Order Orchestration Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200141",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 06:30:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "CRM Integration Adapter is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200142",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 02:51:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Primary SAN Storage Cluster is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200143",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-23 13:00:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Service Desk Portal is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200144",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-21 03:54:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200145",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 01:49:57",
+    "resolved_at": "2026-03-23 01:08:57",
+    "assignee": "Infra Team",
+    "description": "CRM Integration Adapter is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200146",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 21:20:57",
+    "resolved_at": "2026-03-26 02:44:57",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200147",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 20:04:57",
+    "resolved_at": "2026-03-25 17:51:57",
+    "assignee": "App Support",
+    "description": "Service Desk Portal is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200148",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 15:49:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Order Orchestration Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200149",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-23 11:00:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Primary SAN Storage Cluster is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200150",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 20:43:57",
+    "resolved_at": "2026-03-27 16:46:57",
+    "assignee": "Platform SRE",
+    "description": "Service Desk Portal is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200151",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 02:37:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Customer Notifications Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200152",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-24 23:52:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Payroll Processing Engine is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200153",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 19:32:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Windows Patch Management is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200154",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 22:39:57",
+    "resolved_at": "2026-03-23 06:15:57",
+    "assignee": "Ops Team",
+    "description": "Payroll Processing Engine is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200155",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-26 22:01:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200156",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 03:54:57",
+    "resolved_at": "2026-03-26 14:17:57",
+    "assignee": "App Support",
+    "description": "Identity Provider (SSO) is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200157",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 12:17:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Primary SAN Storage Cluster is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200158",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 17:24:57",
+    "resolved_at": "2026-03-26 01:34:57",
+    "assignee": "Service Desk",
+    "description": "Payroll Processing Engine is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200159",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 10:03:57",
+    "resolved_at": "2026-03-27 16:44:57",
+    "assignee": "Platform SRE",
+    "description": "Identity Provider (SSO) is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200160",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-24 09:09:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200161",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 06:48:57",
+    "resolved_at": "2026-03-25 07:04:57",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200162",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 13:35:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Windows Patch Management is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200163",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 21:36:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200164",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 12:21:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200165",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 08:34:57",
+    "resolved_at": "2026-03-24 16:31:57",
+    "assignee": "App Support",
+    "description": "Payment API Gateway is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200166",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 11:05:57",
+    "resolved_at": "2026-03-25 14:02:57",
+    "assignee": "Ops Team",
+    "description": "Payroll Processing Engine is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200167",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-21 09:13:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Corporate VPN Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200168",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 09:21:57",
+    "resolved_at": "2026-03-27 16:51:57",
+    "assignee": "Network Team",
+    "description": "Payroll Processing Engine is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200169",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 06:07:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200170",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 19:14:57",
+    "resolved_at": "2026-03-27 16:49:57",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200171",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 14:05:57",
+    "resolved_at": "2026-03-24 15:29:57",
+    "assignee": "Service Desk",
+    "description": "Payroll Processing Engine is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200172",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-25 21:56:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200173",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-27 14:48:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Order Orchestration Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200174",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 06:06:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Corporate VPN Service is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200175",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-22 03:41:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200176",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-25 11:01:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Corporate VPN Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200177",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 15:37:57",
+    "resolved_at": "2026-03-26 22:37:57",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200178",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 21:38:57",
+    "resolved_at": "2026-03-22 20:46:57",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200179",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 17:02:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200180",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 07:42:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Customer Notifications Service is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200181",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 06:36:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Primary SAN Storage Cluster is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200182",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 18:07:57",
+    "resolved_at": "2026-03-26 05:35:57",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200183",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 22:45:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200184",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 05:44:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Customer Notifications Service is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200185",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 04:05:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200186",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-25 22:03:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200187",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 16:16:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Primary SAN Storage Cluster is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200188",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 06:48:57",
+    "resolved_at": "2026-03-21 18:50:57",
+    "assignee": "Infra Team",
+    "description": "Payroll Processing Engine is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200189",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 07:01:57",
+    "resolved_at": "2026-03-24 23:01:57",
+    "assignee": "Infra Team",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200190",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 16:14:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200191",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-26 00:09:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200192",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 05:17:57",
+    "resolved_at": "2026-03-22 09:31:57",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200193",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 13:01:57",
+    "resolved_at": "2026-03-27 05:50:57",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200194",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-23 17:04:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200195",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-21 23:27:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200196",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 05:40:57",
+    "resolved_at": "2026-03-25 22:59:57",
+    "assignee": "App Support",
+    "description": "Windows Patch Management is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200197",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-22 15:33:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200198",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 16:56:57",
+    "resolved_at": "2026-03-23 09:36:57",
+    "assignee": "Infra Team",
+    "description": "Customer Notifications Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200199",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 09:09:57",
+    "resolved_at": "2026-03-23 09:03:57",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200200",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 05:26:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200201",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 08:39:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200202",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-21 19:00:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Corporate VPN Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200203",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-22 21:15:57",
+    "resolved_at": "2026-03-23 12:24:57",
+    "assignee": "Ops Team",
+    "description": "Payroll Processing Engine is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200204",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 11:57:57",
+    "resolved_at": "2026-03-22 15:26:57",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200205",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 07:26:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200206",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 06:38:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Primary SAN Storage Cluster is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200207",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 11:43:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200208",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 14:03:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "CRM Integration Adapter is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200209",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 22:14:57",
+    "resolved_at": "2026-03-24 05:08:57",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200210",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-25 00:24:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Customer Notifications Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200211",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 12:15:57",
+    "resolved_at": "2026-03-25 23:04:57",
+    "assignee": "Service Desk",
+    "description": "Identity Provider (SSO) is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200212",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-26 13:56:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Order Orchestration Service is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200213",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-24 00:09:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200214",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-24 12:16:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "CRM Integration Adapter is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200215",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 08:29:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Service Desk Portal is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200216",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-26 10:17:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Corporate VPN Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200217",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 13:12:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200218",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-27 02:29:57",
+    "resolved_at": "2026-03-27 10:26:57",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Database failover simulation was executed to validate resilience. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200219",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 16:05:57",
+    "resolved_at": "2026-03-26 12:10:57",
+    "assignee": "Service Desk",
+    "description": "CRM Integration Adapter is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200220",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-26 18:00:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Order Orchestration Service is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200221",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-23 20:04:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "CRM Integration Adapter is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200222",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 16:49:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Windows Patch Management is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200223",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-27 12:36:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200224",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-21 01:42:57",
+    "resolved_at": "2026-03-22 10:50:57",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200225",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-26 12:53:57",
+    "resolved_at": "2026-03-26 13:17:57",
+    "assignee": "Network Team",
+    "description": "Windows Patch Management is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Ops enabled temporary traffic shaping to reduce user impact. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200226",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-21 10:18:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Payment API Gateway is experiencing database lock contention during peak processing. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200227",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-25 12:04:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Customer Notifications Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200228",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-21 09:53:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Service Desk Portal is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200229",
+    "priority": "P1 - Critical",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 12:08:57",
+    "resolved_at": "2026-03-27 11:38:57",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200230",
+    "priority": "P4 - Low",
+    "status": "Open",
+    "timestamp": "2026-03-26 09:33:57",
+    "resolved_at": "",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200231",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-24 17:51:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200232",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-25 01:43:57",
+    "resolved_at": "",
+    "assignee": "Service Desk",
+    "description": "Service Desk Portal is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200233",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 18:50:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Order Orchestration Service is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200234",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-25 04:30:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Primary SAN Storage Cluster is experiencing unexpected service unavailability after config sync. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Team rolled back the most recent deployment and re-applied baseline config. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200235",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-24 10:15:57",
+    "resolved_at": "",
+    "assignee": "Ops Team",
+    "description": "Payment API Gateway is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200236",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 04:32:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "Customer Notifications Service is experiencing token validation failures for active sessions. Multiple teams observed user-facing degradation across dependent workflows. Monitoring captured CPU above 90% and API p95 latency crossing 4.2s. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200237",
+    "priority": "P1 - Critical",
+    "status": "Open",
+    "timestamp": "2026-03-21 18:22:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Payroll Processing Engine is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200238",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-23 07:21:57",
+    "resolved_at": "2026-03-24 14:59:57",
+    "assignee": "App Support",
+    "description": "Customer Notifications Service is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200239",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 16:35:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Customer Notifications Service is experiencing policy conflict errors preventing endpoint compliance. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200240",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 18:36:57",
+    "resolved_at": "2026-03-25 05:10:57",
+    "assignee": "App Support",
+    "description": "Identity Provider (SSO) is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200241",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-27 14:18:57",
+    "resolved_at": "",
+    "assignee": "Platform SRE",
+    "description": "CRM Integration Adapter is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Database metrics showed lock wait spikes during transaction-heavy windows. Initial mitigation: Vendor support was engaged and diagnostic bundles were shared. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200242",
+    "priority": "P2 - High",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 07:33:57",
+    "resolved_at": "2026-03-24 09:54:57",
+    "assignee": "Service Desk",
+    "description": "Primary SAN Storage Cluster is experiencing high authentication latency and sporadic login timeouts. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Vendor support was engaged and diagnostic bundles were shared. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200243",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 15:27:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Service Desk Portal is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Infra team expanded capacity and tuned connection pools. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200244",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 00:39:57",
+    "resolved_at": "2026-03-25 09:44:57",
+    "assignee": "Network Team",
+    "description": "Service Desk Portal is experiencing job failures with repeated retry exhaustion. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Infra team expanded capacity and tuned connection pools. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200245",
+    "priority": "P3 - Medium",
+    "status": "Open",
+    "timestamp": "2026-03-22 08:58:57",
+    "resolved_at": "",
+    "assignee": "App Support",
+    "description": "Service Desk Portal is experiencing message delivery backlog growing beyond SLA. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200246",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-25 16:58:57",
+    "resolved_at": "2026-03-27 10:04:57",
+    "assignee": "Network Team",
+    "description": "Primary SAN Storage Cluster is experiencing disk I/O saturation and queue-depth spikes. Multiple teams observed user-facing degradation across dependent workflows. Logs show error bursts between 08:40 and 09:05 UTC with correlation IDs attached. Initial mitigation: Database failover simulation was executed to validate resilience. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Team rolled back the most recent deployment and re-applied baseline config. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200247",
+    "priority": "P2 - High",
+    "status": "Open",
+    "timestamp": "2026-03-23 01:23:57",
+    "resolved_at": "",
+    "assignee": "Infra Team",
+    "description": "Identity Provider (SSO) is experiencing intermittent 502 responses and rising error rates. Multiple teams observed user-facing degradation across dependent workflows. Queue depth tripled compared to daily baseline, indicating cascading degradation. Initial mitigation: Ops enabled temporary traffic shaping to reduce user impact. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": ""
+  },
+  {
+    "ticket_id": "INC-200248",
+    "priority": "P3 - Medium",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 21:00:57",
+    "resolved_at": "2026-03-25 12:50:57",
+    "assignee": "Service Desk",
+    "description": "Corporate VPN Service is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Synthetic checks failed from two regions while internal health checks remained green. Initial mitigation: Queue workers were horizontally scaled and dead-letter retries were replayed. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by On-call engineer restarted the affected pods and cleared stale sessions. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  },
+  {
+    "ticket_id": "INC-200249",
+    "priority": "P4 - Low",
+    "status": "Resolved",
+    "timestamp": "2026-03-24 13:51:57",
+    "resolved_at": "2026-03-26 11:36:57",
+    "assignee": "Infra Team",
+    "description": "Payment API Gateway is experiencing cache invalidation failures causing stale responses. Multiple teams observed user-facing degradation across dependent workflows. Audit trail indicates a policy update 17 minutes before first alert. Initial mitigation: On-call engineer restarted the affected pods and cleared stale sessions. Stakeholders requested periodic updates including impact, ownership, and ETA to recovery.",
+    "resolution_notes": "Resolved by Queue workers were horizontally scaled and dead-letter retries were replayed. Root cause validated from logs and metrics. Service stability confirmed for two monitoring intervals and incident closed."
+  }
+]

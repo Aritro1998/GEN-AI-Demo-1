@@ -1,0 +1,61 @@
+incident_id,description,priority,created_at,resolution_notes
+INC001,Users unable to login due to authentication service timeout,High,2026-03-20 10:00,Restarted auth service and cleared cache
+INC002,Database connection pool exhausted causing app slowdown,High,2026-03-20 10:15,Increased pool size and optimized queries
+INC003,API returning 500 error for payment processing,Critical,2026-03-20 10:30,Fixed null pointer issue in payment service
+INC004,UI dashboard not loading charts,Medium,2026-03-20 10:45,Updated frontend library and fixed API mapping
+INC005,Intermittent network latency in production servers,High,2026-03-20 11:00,Restarted network switch and optimized routing
+INC006,Users receiving session timeout errors frequently,Medium,2026-03-20 11:15,Adjusted session timeout configuration
+INC007,Database deadlock detected during high load,High,2026-03-20 11:30,Implemented retry logic and query optimization
+INC008,API rate limiting incorrectly blocking valid users,Medium,2026-03-20 11:45,Updated rate limit rules
+INC009,Dropdown menu not responsive on mobile devices,Low,2026-03-20 12:00,Fixed CSS and JavaScript event handling
+INC010,Packet loss observed between microservices,High,2026-03-20 12:15,Resolved network congestion and upgraded bandwidth
+INC011,Slow SQL queries impacting report generation,Medium,2026-03-20 12:30,Added indexing and optimized joins
+INC012,API authentication token validation failing,High,2026-03-20 12:45,Fixed token parsing logic
+INC013,UI form submission button not working,Medium,2026-03-20 13:00,Resolved JavaScript error
+INC014,Network firewall blocking internal service calls,Critical,2026-03-20 13:15,Updated firewall rules
+INC015,Database replication lag causing stale data,High,2026-03-20 13:30,Fixed replication sync issue
+INC016,API returning incorrect data for user profile,Medium,2026-03-20 13:45,Fixed mapping issue in backend
+INC017,UI alignment issues on homepage,Low,2026-03-20 14:00,Updated CSS styles
+INC018,Network DNS resolution delays,Medium,2026-03-20 14:15,Switched to faster DNS provider
+INC019,Database schema mismatch after deployment,High,2026-03-20 14:30,Rolled back schema and reapplied migration
+INC020,API timeout when fetching large datasets,High,2026-03-20 14:45,Implemented pagination
+INC021,UI images not loading on dashboard,Low,2026-03-20 15:00,Fixed CDN configuration
+INC022,Network outage in one availability zone,Critical,2026-03-20 15:15,Rerouted traffic and restored connectivity
+INC023,Database connection refused error,High,2026-03-20 15:30,Restarted DB service
+INC024,API returning 403 for authorized users,Medium,2026-03-20 15:45,Fixed authorization logic
+INC025,UI modal not closing properly,Low,2026-03-20 16:00,Fixed event listener issue
+INC026,Network bandwidth saturation during peak hours,High,2026-03-20 16:15,Scaled infrastructure
+INC027,Database backup job failing,High,2026-03-20 16:30,Fixed storage permissions
+INC028,API returning malformed JSON response,Medium,2026-03-20 16:45,Corrected serialization logic
+INC029,UI search bar not returning results,Medium,2026-03-20 17:00,Fixed API endpoint mapping
+INC030,Network packet duplication observed,Low,2026-03-20 17:15,Resolved routing misconfiguration
+INC031,Database index corruption detected,Critical,2026-03-20 17:30,Rebuilt indexes
+INC032,API caching issue returning stale data,Medium,2026-03-20 17:45,Cleared cache and updated TTL
+INC033,UI pagination not working correctly,Low,2026-03-20 18:00,Fixed page index logic
+INC034,Network SSL handshake failures,High,2026-03-20 18:15,Updated SSL certificates
+INC035,Database high CPU usage,High,2026-03-20 18:30,Optimized queries and added caching
+INC036,API version mismatch causing failures,Medium,2026-03-20 18:45,Aligned API versions
+INC037,UI tooltip not displaying,Low,2026-03-20 19:00,Fixed JS hover logic
+INC038,Network proxy misconfiguration blocking traffic,High,2026-03-20 19:15,Updated proxy settings
+INC039,Database transaction rollback errors,High,2026-03-20 19:30,Fixed transaction handling
+INC040,API gateway timeout errors,Critical,2026-03-20 19:45,Scaled gateway instances
+INC041,UI button click delay,Low,2026-03-20 20:00,Optimized frontend rendering
+INC042,Network jitter affecting streaming service,Medium,2026-03-20 20:15,Optimized QoS settings
+INC043,Database disk space full,Critical,2026-03-20 20:30,Cleaned logs and expanded storage
+INC044,API response delay due to external dependency,Medium,2026-03-20 20:45,Added fallback mechanism
+INC045,UI font rendering issue on Safari,Low,2026-03-20 21:00,Fixed cross-browser compatibility
+INC046,Network port conflicts detected,Medium,2026-03-20 21:15,Resolved port allocation
+INC047,Database query timeout errors,High,2026-03-20 21:30,Optimized queries
+INC048,API authentication latency,Medium,2026-03-20 21:45,Improved auth service performance
+INC049,UI breadcrumb navigation broken,Low,2026-03-20 22:00,Fixed routing issue
+INC050,Network packet drops during peak load,High,2026-03-20 22:15,Upgraded network capacity
+INC051,Database connection leak detected,Critical,2026-03-20 22:30,Fixed connection handling
+INC052,API inconsistent response structure,Medium,2026-03-20 22:45,Standardized response format
+INC053,UI sidebar collapse not working,Low,2026-03-20 23:00,Fixed toggle logic
+INC054,Network routing loop detected,Critical,2026-03-20 23:15,Corrected routing tables
+INC055,Database failover not triggering,Critical,2026-03-20 23:30,Fixed failover configuration
+INC056,API throttling too aggressive,Medium,2026-03-20 23:45,Adjusted throttling limits
+INC057,UI dark mode rendering issues,Low,2026-03-21 00:00,Fixed CSS variables
+INC058,Network VPN connectivity issues,High,2026-03-21 00:15,Restarted VPN service
+INC059,Database inconsistent read replicas,High,2026-03-21 00:30,Resynced replicas
+INC060,API error logging not capturing details,Medium,2026-03-21 00:45,Enhanced logging configuration

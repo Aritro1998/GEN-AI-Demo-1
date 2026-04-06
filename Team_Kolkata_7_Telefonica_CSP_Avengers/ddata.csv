@@ -1,0 +1,31 @@
+incident_id,description,priority,created_at,resolution_notes
+INC061,users reporting login fail again... auth svc slow?? seeing 502 sometimes,High,2026-03-21 01:00,restarted auth svc + cleared sessions
+INC062,db connections maxed out... app freezing randomly??,P1,2026-03-21 01:15,increased pool + killed stale conns
+INC063,payment api crashing!!! error 500 + null ptr logs,CRITICAL,2026-03-21 01:30,fixed null issue + redeployed svc
+INC064,ui dashboard blank... charts not loading... maybe api broken?,medium,2026-03-21 01:45,updated api mapping + frontend fix
+INC065,network lag spikes... users saying app very slow rn,High,2026-03-21 02:00,restarted router + optimized routing
+INC066,session timeout too frequent... users getting kicked out again n again,MED,2026-03-21 02:15,adjusted session timeout config
+INC067,deadlock in db under load!!! queries stuck... need retry logic,high,2026-03-21 02:30,added retry + query tuning
+INC068,rate limiting blocking valid reqs?? config seems off,Medium,2026-03-21 02:45,fixed rate limit rules
+INC069,mobile dropdown not working... tap does nothing lol,low,2026-03-21 03:00,fixed css/js issue
+INC070,packet loss ~15% btw services... seeing timeout errors also,High,2026-03-21 03:15,resolved congestion + bandwidth upgrade
+INC071,reports taking forever... sql queries slow af... joins heavy?,medium,2026-03-21 03:30,added indexing + optimized joins
+INC072,auth token validation failing randomly... users logout issue??,HIGH,2026-03-21 03:45,fixed token parsing logic
+INC073,submit btn not working on form... click no response??,Medium,2026-03-21 04:00,fixed js bug
+INC074,firewall blocking internal api calls!!! services failing badly,Critical,2026-03-21 04:15,updated firewall config asap
+INC075,db replication delay... stale data showing on ui sometimes,High,2026-03-21 04:30,resynced replicas
+INC076,profile api returning wrong data... mapping issue maybe??,medium,2026-03-21 04:45,fixed backend mapping
+INC077,homepage ui alignment broken... looks weird on desktop,low,2026-03-21 05:00,updated css styles
+INC078,dns resolution slow... requests delayed idk why,Medium,2026-03-21 05:15,switched dns provider
+INC079,schema mismatch after deploy... app throwing errors!!!,High,2026-03-21 05:30,rolled back + reapplied migration
+INC080,api timeout on large data fetch... maybe no pagination??,HIGH,2026-03-21 05:45,added pagination support
+INC081,images not loading on dashboard... broken links??,low,2026-03-21 06:00,fixed cdn config
+INC082,zone outage?? one region down completely... critical!!!,CRITICAL,2026-03-21 06:15,rerouted traffic + restored svc
+INC083,db connection refused error... cant connect at all,High,2026-03-21 06:30,restarted db instance
+INC084,api giving 403 for valid users?? auth issue maybe,medium,2026-03-21 06:45,fixed auth logic
+INC085,modal not closing... stuck on screen lol,low,2026-03-21 07:00,fixed event handler
+INC086,bandwidth maxed during peak... network saturation issue,High,2026-03-21 07:15,scaled infra
+INC087,backup job failing again... permission denied error??,HIGH,2026-03-21 07:30,fixed storage perms
+INC088,api returning weird json... malformed response structure,Medium,2026-03-21 07:45,fixed serialization bug
+INC089,search not working... no results even when data exists??,medium,2026-03-21 08:00,fixed api endpoint
+INC090,packet duplication issue... seeing duplicate req logs??,Low,2026-03-21 08:15,fixed routing config
