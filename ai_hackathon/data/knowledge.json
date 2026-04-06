@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Performance bottleneck diagnosis",
+    "summary": "Use logs, metrics, traces, and recent deployment context to identify likely bottlenecks and suggest next actions.",
+    "description": "Helpful outputs include symptom summary, likely cause, supporting evidence, and remediation ideas.",
+    "notes": "Useful for performance, SRE, incident explanation, and observability demos."
+  },
+  {
+    "title": "Architecture or compliance review",
+    "summary": "Compare system documents or metadata against a compact rule set and generate findings with remediation suggestions.",
+    "description": "Helpful outputs include compliant items, violations, missing evidence, and recommended fixes.",
+    "notes": "Useful for compliance, audit, governance, and architecture assessment demos."
+  },
+  {
+    "title": "Legacy modernization assistant",
+    "summary": "Summarize legacy artifacts, extract dependencies, infer business function, and generate modernization-ready documentation.",
+    "description": "Helpful outputs include module summaries, risks, interfaces, and migration recommendations.",
+    "notes": "Useful for code understanding, documentation, and transformation demos."
+  },
+  {
+    "title": "Social review or feedback analysis",
+    "summary": "Ingest customer posts or reviews, group themes, summarize sentiment drivers, and recommend actions.",
+    "description": "Helpful outputs include recurring topics, sample evidence, sentiment patterns, and business insights.",
+    "notes": "Useful for consumer insights, VOC, and review intelligence demos."
+  },
+  {
+    "title": "Security report generation",
+    "summary": "Aggregate evidence from findings and configuration data, map issues to controls, and generate a structured report.",
+    "description": "Helpful outputs include executive summary, findings, severity, and remediation plan.",
+    "notes": "Useful for cloud security, governance, and audit report demos."
+  }
+]
