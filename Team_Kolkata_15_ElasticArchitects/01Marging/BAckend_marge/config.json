@@ -1,9 +1,0 @@
-{
-  "app_name": "Generative AI Project",
-  "version": "1.0.0",
-  "debug": true,
-  "DB_PATH": "farmer_backend.db",
-  "JWT_SECRET": "your_jwt_secret",
-  "JWT_ALGORITHM": "HS256",
-  "OPENAI_API_KEY":"sk-NDphplabEc8DR-bF5IPRzg"
-}

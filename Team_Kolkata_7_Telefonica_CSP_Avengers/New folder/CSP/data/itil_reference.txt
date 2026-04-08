@@ -1,9 +1,0 @@
-﻿ITIL Incident Management Guidance: Prioritize incidents based on impact and urgency to restore service quickly and minimize business disruption.
-
-Major Incident Handling: For critical incidents, initiate immediate containment, assign clear owners, and provide frequent stakeholder communication until service is stable.
-
-Diagnosis and Workaround: Use known-error records and past incident patterns to accelerate root-cause isolation and apply tested workarounds while permanent fixes are prepared.
-
-Resolution and Recovery: Validate the fix through service checks, user confirmation, and monitoring indicators before formally closing the incident.
-
-Continual Improvement: Document root cause, resolution steps, and preventive controls in closure notes so future incidents can be handled faster and with lower risk.
