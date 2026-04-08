@@ -1,9 +1,19 @@
+"""
+0.0 → very deterministic
+0.3 → focused
+0.7 → balanced (default-ish)
+1.0+ → creative / chaotic
+"""
+
+import httpx
 from openai import OpenAI
+
 
 # Initialize client
 client = OpenAI(
-    api_key="YOUR_API_KEY",
-    base_url="https://genailab.tcs.in/"
+    api_key="sk-vvQ3gM9dUe3UOpBc1a4aTA",
+    base_url="https://genailab.tcs.in/",
+    http_client=httpx.Client(verify=False)
 )
 
 # Choose model
@@ -16,13 +26,6 @@ response = client.chat.completions.create(
         {"role": "user", "content": "Explain why high CPU usage can slow down an application."}
     ],
     temperature=0.7
-    """
-    0.0 → very deterministic
-    0.3 → focused
-    0.7 → balanced (default-ish)
-    1.0+ → creative / chaotic
-    """
-
 )
 
 print(response.choices[0].message.content)

@@ -1,6 +1,9 @@
 import json
+import logging
 
 from modules.llm import call_llm
+
+logger = logging.getLogger(__name__)
 
 
 class SafeDict(dict):
@@ -27,9 +30,17 @@ class BaseModule:
 
     def run(self, step, state, model):
         prompt = step["prompt"].format_map(self._build_template_context(state, step))
-        return call_llm(
+        module_type = self.__class__.__name__
+
+        logger.info("\n>>> [%s] Model: %s", module_type, model)
+        logger.info("[%s] INPUT:\n%s", module_type, prompt)
+
+        output = call_llm(
             model=model,
             system_prompt=step["system_prompt"],
             user_prompt=prompt,
             temperature=step["temperature"],
         )
+
+        logger.info("[%s] RESPONSE:\n%s", module_type, output)
+        return output

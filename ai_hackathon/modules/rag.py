@@ -5,7 +5,7 @@ from modules.llm import get_client
 
 class RAG:
     def __init__(self, data_path, embedding_model, text_fields=None):
-        with open(data_path) as f:
+        with open('C:\\vs-code\\ai_hackathon\\data\\knowledge.json', 'r') as f:
             self.knowledge = json.load(f)
 
         self.embedding_model = embedding_model
