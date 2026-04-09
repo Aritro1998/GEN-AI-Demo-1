@@ -9,7 +9,7 @@ import httpx
 from dotenv import load_dotenv
 from openai import OpenAI
 
-from config import API_CONFIG
+from config import API_CONFIG, DEFAULT_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -92,6 +92,12 @@ def _file_to_data_url(file_path):
     return f"data:{mime_type};base64,{encoded}"
 
 
+def _is_deployment_not_found(exc):
+    """Return True when the exception signals a missing model deployment."""
+    exc_str = str(exc).lower()
+    return "404" in exc_str and ("notfounderror" in exc_str or "deploymentnotfound" in exc_str)
+
+
 def call_text_model(model, system_prompt, user_prompt, temperature=0.3):
     """Send a text chat completion request and return the assistant text."""
     system_prompt = sanitize_text(system_prompt)
@@ -106,9 +112,23 @@ def call_text_model(model, system_prompt, user_prompt, temperature=0.3):
             ],
             temperature=temperature,
         )
-    except Exception:
-        logger.exception("LLM request failed for model=%s", model)
-        raise
+    except Exception as exc:
+        if model != DEFAULT_MODEL and _is_deployment_not_found(exc):
+            logger.warning(
+                "Model %s unavailable (DeploymentNotFound), falling back to %s",
+                model, DEFAULT_MODEL,
+            )
+            response = get_client().chat.completions.create(
+                model=DEFAULT_MODEL,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                temperature=temperature,
+            )
+        else:
+            logger.exception("LLM request failed for model=%s", model)
+            raise
 
     # The chat completion API can return empty content even on a successful
     # response object, so we treat that as a warning-worthy signal.
@@ -142,9 +162,23 @@ def call_vision_model(model, system_prompt, user_prompt, image_paths, temperatur
             ],
             temperature=temperature,
         )
-    except Exception:
-        logger.exception("Vision model request failed for model=%s", model)
-        raise
+    except Exception as exc:
+        if model != DEFAULT_MODEL and _is_deployment_not_found(exc):
+            logger.warning(
+                "Vision model %s unavailable (DeploymentNotFound), falling back to %s",
+                model, DEFAULT_MODEL,
+            )
+            response = get_client().chat.completions.create(
+                model=DEFAULT_MODEL,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": content},
+                ],
+                temperature=temperature,
+            )
+        else:
+            logger.exception("Vision model request failed for model=%s", model)
+            raise
 
     result = _coerce_message_content(response.choices[0].message.content)
     if not result:
