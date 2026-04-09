@@ -20,8 +20,8 @@ It provides a simple UI for:
 
 ## Project Files
 
-- [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend/app.py): main Streamlit application
-- [`requirements.txt`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend/requirements.txt): frontend Python dependencies
+- [`app.py`](app.py): main Streamlit application
+- [`../requirements.txt`](../requirements.txt): shared Python dependencies for backend and frontend
 
 ## Prerequisites
 
@@ -34,17 +34,49 @@ The frontend currently expects the backend API at:
 http://127.0.0.1:8000/api
 ```
 
-If your backend runs elsewhere, update `API_BASE` in [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend/app.py).
+If your backend runs elsewhere, update `API_BASE` in [`app.py`](app.py).
 
 ## Setup
+
+Use one shared environment for the whole project.
 
 From the repository root:
 
 ```bash
-cd ai_hackathon/Frontend
+cd ai_hackathon
 python3 -m venv .venv
+```
+
+Activate it with the command for your OS:
+
+macOS/Linux:
+
+```bash
 source .venv/bin/activate
+```
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Windows Command Prompt:
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+Install the shared dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
+Then go to the frontend folder:
+
+```bash
+cd Frontend
 ```
 
 ## Run the Frontend
@@ -81,7 +113,7 @@ Typical flow:
 
 ## Customization
 
-The quickest frontend changes usually happen in [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend/app.py):
+The quickest frontend changes usually happen in [`app.py`](app.py):
 
 - change the backend base URL
 - adjust labels and section text

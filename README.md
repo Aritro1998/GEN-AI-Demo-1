@@ -22,7 +22,7 @@ GEN-AI-Demo-1/
 
 Location:
 
-- [`ai_hackathon/Backend/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend)
+- [`ai_hackathon/Backend/`](ai_hackathon/Backend/)
 
 Purpose:
 
@@ -41,13 +41,13 @@ Tech stack:
 
 Backend guide:
 
-- [`Backend/README.md`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/README.md)
+- [`Backend/README.md`](ai_hackathon/Backend/README.md)
 
 ### Frontend
 
 Location:
 
-- [`ai_hackathon/Frontend/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend)
+- [`ai_hackathon/Frontend/`](ai_hackathon/Frontend/)
 
 Purpose:
 
@@ -64,13 +64,13 @@ Tech stack:
 
 Frontend guide:
 
-- [`Frontend/README.md`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend/README.md)
+- [`Frontend/README.md`](ai_hackathon/Frontend/README.md)
 
 ### Frontend2
 
 Location:
 
-- [`ai_hackathon/Frontend2/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Frontend2)
+- `ai_hackathon/Frontend2/`
 
 Purpose:
 
@@ -84,13 +84,43 @@ Purpose:
 
 ## Quick Start
 
+Create one shared virtual environment for both backend and frontend:
+
+```bash
+cd ai_hackathon
+python3 -m venv .venv
+```
+
+Activate it with the command for your OS:
+
+macOS/Linux:
+
+```bash
+source .venv/bin/activate
+```
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Windows Command Prompt:
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+Install the shared dependencies:
+
+```bash
+pip install -r requirements.txt
+```
+
 ### Backend
 
 ```bash
 cd ai_hackathon/Backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
 cp .env.example .env
 python3 manage.py migrate
 python3 manage.py runserver
@@ -102,9 +132,6 @@ In a new terminal:
 
 ```bash
 cd ai_hackathon/Frontend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
 streamlit run app.py
 ```
 
@@ -112,6 +139,7 @@ streamlit run app.py
 
 - The frontend expects the backend API to be available locally unless you change the configured base URL in the frontend app.
 - The backend depends on valid API credentials and model configuration in its `.env` file.
+- The shared environment dependencies are installed from [`ai_hackathon/requirements.txt`](ai_hackathon/requirements.txt).
 - For detailed setup instructions, use the component-specific README files.
 
 ## Presentation Note

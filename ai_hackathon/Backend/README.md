@@ -38,22 +38,54 @@ Backend/
 
 Main files:
 
-- [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/app.py): local runner for testing without the API
-- [`config.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/config.py): pipeline and model configuration
-- [`orchestrator.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/orchestrator.py): main execution flow
-- [`api/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/api): REST API layer
-- [`modules/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/modules): pipeline modules and shared LLM/RAG helpers
-- [`data/knowledge.json`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/data/knowledge.json): local RAG knowledge store
+- [`app.py`](app.py): local runner for testing without the API
+- [`config.py`](config.py): pipeline and model configuration
+- [`orchestrator.py`](orchestrator.py): main execution flow
+- [`api/`](api): REST API layer
+- [`modules/`](modules): pipeline modules and shared LLM/RAG helpers
+- [`data/knowledge.json`](data/knowledge.json): local RAG knowledge store
 
 ## Setup
+
+Use one shared environment for the whole project.
 
 From the repository root:
 
 ```bash
-cd ai_hackathon/Backend
+cd ai_hackathon
 python3 -m venv .venv
+```
+
+Activate it with the command for your OS:
+
+macOS/Linux:
+
+```bash
 source .venv/bin/activate
+```
+
+Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+Windows Command Prompt:
+
+```bat
+.venv\Scripts\activate.bat
+```
+
+Install the shared dependencies:
+
+```bash
 pip install -r requirements.txt
+```
+
+Then go to the backend folder:
+
+```bash
+cd Backend
 ```
 
 Create your environment file:
@@ -89,7 +121,7 @@ To test the backend without starting the API server:
 python3 app.py
 ```
 
-Update the sample inputs inside [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/app.py) as needed:
+Update the sample inputs inside [`app.py`](app.py) as needed:
 
 - `input_text`
 - `audio_path`
@@ -139,7 +171,7 @@ The backend follows a configurable pipeline model:
 
 ## Configuration Notes
 
-The main configuration surface is [`config.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/config.py).
+The main configuration surface is [`config.py`](config.py).
 
 Prompt templates can reference values such as:
 
@@ -171,3 +203,4 @@ You can keep it small and update it based on the problem statement or demo scena
 - This backend is optimized for flexibility and quick iteration.
 - The local runner is useful for testing prompts and pipeline behavior before wiring up the frontend.
 - If the configured API endpoint or model IDs are invalid, the backend will fail at runtime even if setup is otherwise correct.
+- The project uses the shared dependency file at [`../requirements.txt`](../requirements.txt) for both backend and frontend.
