@@ -6,7 +6,8 @@ import tempfile
 from functools import lru_cache
 from pathlib import Path
 
-from config import RAG_CONFIG, resolve_backend_path
+from config import KNOWLEDGE_PROMOTION_MODEL, RAG_CONFIG, resolve_backend_path
+from modules.llm import call_llm
 from orchestrator import Orchestrator
 
 logger = logging.getLogger(__name__)
@@ -72,6 +73,93 @@ def _normalize_knowledge_entry(entry, default_source):
     }
 
 
+def _extract_json_object(text):
+    """Parse a JSON object from raw model output, with code-fence tolerance."""
+    if not text:
+        raise ValueError("Formatter returned empty output.")
+
+    candidate = text.strip()
+    if candidate.startswith("```"):
+        lines = candidate.splitlines()
+        if lines and lines[0].startswith("```"):
+            lines = lines[1:]
+        if lines and lines[-1].strip() == "```":
+            lines = lines[:-1]
+        candidate = "\n".join(lines).strip()
+        if candidate.lower().startswith("json"):
+            candidate = candidate[4:].strip()
+
+    try:
+        return json.loads(candidate)
+    except json.JSONDecodeError:
+        start = candidate.find("{")
+        end = candidate.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            return json.loads(candidate[start : end + 1])
+        raise
+
+
+def _format_promoted_output(entry):
+    """Convert an approved RCA-style output into the compact knowledge schema."""
+    prompt = (
+        "Convert the approved incident analysis into a compact knowledge record.\n\n"
+        "Return only valid JSON using exactly this schema:\n"
+        "{\n"
+        '  "title": "...",\n'
+        '  "summary": "...",\n'
+        '  "description": "...",\n'
+        '  "category": "...",\n'
+        '  "notes": "..."\n'
+        "}\n\n"
+        "Rules:\n"
+        "- title: short incident label\n"
+        "- summary: one concise sentence\n"
+        "- description: compact root cause, evidence, and recommended actions\n"
+        "- category: one of CPU, Memory, I/O, Network, Others\n"
+        "- notes: short retrieval hints or reviewer notes\n"
+        "- keep it compact and retrieval-friendly\n"
+        "- do not include markdown or extra commentary\n\n"
+        f"Original problem statement:\n{entry.get('original_input', '').strip()}\n\n"
+        f"Classification:\n{entry.get('classification', '').strip()}\n\n"
+        f"Technical analysis:\n{entry.get('analysis', '').strip()}\n\n"
+        f"Approved final output:\n{entry.get('final_output', '').strip()}\n\n"
+        f"Reviewer notes:\n{entry.get('notes', '').strip()}\n"
+    )
+
+    response = call_llm(
+        model=KNOWLEDGE_PROMOTION_MODEL,
+        system_prompt=(
+            "You convert reviewed AI outputs into normalized retrieval knowledge entries. "
+            "Return only valid JSON."
+        ),
+        user_prompt=prompt,
+        temperature=0.1,
+    )
+    formatted = _extract_json_object(response)
+
+    if not isinstance(formatted, dict):
+        raise ValueError("Formatter did not return a JSON object.")
+
+    classification = (entry.get("classification") or "").strip()
+    category = (formatted.get("category") or classification or "Others").strip()
+    if category not in {"CPU", "Memory", "I/O", "Network", "Others"}:
+        category = classification if classification in {"CPU", "Memory", "I/O", "Network", "Others"} else "Others"
+
+    notes = (formatted.get("notes") or "").strip()
+    reviewer_notes = entry.get("notes", "").strip()
+    if reviewer_notes and reviewer_notes not in notes:
+        notes = f"{notes}\n\nReviewer notes: {reviewer_notes}".strip() if notes else reviewer_notes
+
+    return {
+        "title": str(formatted.get("title", "")).strip(),
+        "summary": str(formatted.get("summary", "")).strip(),
+        "description": str(formatted.get("description", "")).strip(),
+        "category": category,
+        "notes": notes,
+        "source": entry.get("source", "promoted_output"),
+    }
+
+
 def _entry_signature(entry):
     """Build a lightweight signature for duplicate detection."""
     return (
@@ -105,7 +193,19 @@ def add_manual_knowledge_entry(entry):
 
 def promote_output_to_knowledge(entry):
     """Append a reviewed model output summary as a knowledge entry."""
-    normalized_entry = _normalize_knowledge_entry(entry, default_source="promoted_output")
+    has_manual_fields = all(entry.get(field, "").strip() for field in ("title", "summary", "description"))
+    if has_manual_fields:
+        normalized_entry = _normalize_knowledge_entry(entry, default_source="promoted_output")
+    elif entry.get("auto_format"):
+        normalized_entry = _normalize_knowledge_entry(
+            _format_promoted_output(entry),
+            default_source="promoted_output",
+        )
+    else:
+        raise ValueError(
+            "Provide title, summary, and description for manual promotion, "
+            "or set auto_format=true with the reviewed output fields."
+        )
 
     final_output = entry.get("final_output", "").strip()
     if final_output:
