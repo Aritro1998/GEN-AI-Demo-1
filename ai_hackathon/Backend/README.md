@@ -1,74 +1,34 @@
-# Multimodal AI Analysis Backend
+# Backend Setup Guide
 
-This repository contains a configurable multimodal backend built for hackathon-style problem solving. It accepts typed input, optional screenshots, and optional audio, converts them into a unified context, runs an LLM pipeline, and returns structured output through both a local runner and REST API endpoints.
+This backend is a configurable Python service for running a multi-step AI analysis pipeline.
 
-## Features
+It supports:
 
-- Text, image, and audio input support
-- Config-driven LLM pipeline
-- Optional RAG over a local knowledge base
-- Django + DRF API endpoints
-- Manual knowledge entry creation
-- Promotion of reviewed outputs into the knowledge base
-- Local runner for direct testing without calling the API
+- text input
+- optional image input
+- optional audio input
+- retrieval-augmented generation over a local knowledge file
+- API-based execution through Django and Django REST Framework
+- direct local execution through a small runner script
 
-## Architecture
+## Tech Stack
 
-The backend is organized into four layers:
-
-1. `core/`
-   Django project configuration, settings, and root URLs.
-
-2. `api/`
-   DRF endpoints, request validation, and service helpers for file handling and orchestration.
-
-3. `orchestrator.py`
-   Coordinates preprocessing and the main pipeline.
-
-4. `modules/`
-   Shared model gateway and text pipeline modules.
-
-### Processing Flow
-
-1. User submits typed text, optional audio, and optional screenshots.
-2. Audio is transcribed with the configured transcription model.
-3. Screenshots are analyzed with the configured vision model.
-4. All available inputs are merged into one combined context.
-5. The text pipeline runs through:
-   - `classifier`
-   - `reasoner`
-   - `generator`
-6. The result is returned to the caller.
-
-If RAG is enabled, the reasoning step can also retrieve supporting context from the configured knowledge base.
+- Python
+- Django
+- Django REST Framework
+- OpenAI-compatible API client
+- NumPy
+- `python-dotenv`
 
 ## Project Structure
 
 ```text
 Backend/
 ├── api/
-│   ├── apps.py
-│   ├── serializers.py
-│   ├── services.py
-│   ├── urls.py
-│   └── views.py
 ├── core/
-│   ├── asgi.py
-│   ├── settings.py
-│   ├── urls.py
-│   └── wsgi.py
 ├── data/
-│   └── knowledge.json
 ├── modules/
-│   ├── base_module.py
-│   ├── classifier.py
-│   ├── generator.py
-│   ├── llm.py
-│   ├── module_factory.py
-│   ├── rag.py
-│   └── reasoner.py
 ├── utils/
-│   └── similarity.py
 ├── app.py
 ├── config.py
 ├── manage.py
@@ -76,13 +36,38 @@ Backend/
 └── requirements.txt
 ```
 
-## Configuration
+Main files:
 
-The main runtime configuration lives in `config.py`.
+- [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/app.py): local runner for testing without the API
+- [`config.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/config.py): pipeline and model configuration
+- [`orchestrator.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/orchestrator.py): main execution flow
+- [`api/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/api): REST API layer
+- [`modules/`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/modules): pipeline modules and shared LLM/RAG helpers
+- [`data/knowledge.json`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/data/knowledge.json): local RAG knowledge store
 
-### Model Configuration
+## Setup
 
-The following model slots are supported:
+From the repository root:
+
+```bash
+cd ai_hackathon/Backend
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+Create your environment file:
+
+```bash
+cp .env.example .env
+```
+
+At minimum, configure:
+
+- `OPENAI_API_KEY`
+- `BASE_URL`
+
+Common optional variables:
 
 - `DEFAULT_MODEL`
 - `CLASSIFIER_MODEL`
@@ -91,30 +76,72 @@ The following model slots are supported:
 - `EMBEDDING_MODEL`
 - `VISION_MODEL`
 - `TRANSCRIPTION_MODEL`
-
-### Knowledge Base Configuration
-
-The knowledge file path is configurable through:
-
 - `KNOWLEDGE_DATA_PATH`
-
-If not provided, it defaults to:
-
-```text
-data/knowledge.json
-```
-
-### Django Configuration
-
-Optional environment variables:
-
 - `DJANGO_SECRET_KEY`
 - `DJANGO_DEBUG`
 - `DJANGO_ALLOWED_HOSTS`
 
-## Prompt Variables
+## Running Locally
 
-Prompt templates in `config.py` can use:
+To test the backend without starting the API server:
+
+```bash
+python3 app.py
+```
+
+Update the sample inputs inside [`app.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/app.py) as needed:
+
+- `input_text`
+- `audio_path`
+- `image_paths`
+
+## Running the API
+
+Apply migrations and start the Django development server:
+
+```bash
+python3 manage.py migrate
+python3 manage.py runserver
+```
+
+Default local URL:
+
+```text
+http://127.0.0.1:8000
+```
+
+## API Endpoints
+
+Base API path:
+
+```text
+http://127.0.0.1:8000/api
+```
+
+Main endpoints:
+
+- `GET /api/health/`
+- `POST /api/process/`
+- `POST /api/knowledge/`
+- `POST /api/knowledge/promote/`
+
+## Processing Flow
+
+The backend follows a configurable pipeline model:
+
+1. collect typed input
+2. optionally transcribe audio
+3. optionally analyze images
+4. merge the available context
+5. run the configured LLM pipeline steps
+6. optionally use RAG during the configured step
+7. return structured output
+
+## Configuration Notes
+
+The main configuration surface is [`config.py`](/Users/aritro-mac/Documents/VS_Code/GEN-AI-Demo-1/ai_hackathon/Backend/config.py).
+
+Prompt templates can reference values such as:
 
 - `{input}`
 - `{original_input}`
@@ -125,154 +152,22 @@ Prompt templates in `config.py` can use:
 - `{previous_output}`
 - `{retrieved_context}`
 - `{step_outputs_json}`
-- `{<step_id>}` from previous steps
-
-## Setup
-
-1. Create and activate a virtual environment.
-
-```bash
-python3 -m venv .venv
-source .venv/bin/activate
-```
-
-2. Install dependencies.
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Create the environment file.
-
-```bash
-cp .env.example .env
-```
-
-4. Configure at least:
-
-- `OPENAI_API_KEY`
-- `BASE_URL`
-
-## Running Locally Without API
-
-The file `app.py` can be used to test the pipeline directly.
-
-```bash
-python3 app.py
-```
-
-Edit the following variables in `app.py` as needed:
-
-- `input_text`
-- `audio_path`
-- `image_paths`
-
-## Running The API
-
-Start the Django development server:
-
-```bash
-python3 manage.py migrate
-python3 manage.py runserver
-```
-
-Default local base URL:
-
-```text
-http://127.0.0.1:8000
-```
-
-## API Endpoints
-
-### `GET /api/health/`
-
-Returns a simple health response.
-
-Example response:
-
-```json
-{
-  "status": "ok"
-}
-```
-
-### `POST /api/process/`
-
-Accepts multipart form data and runs the multimodal pipeline.
-
-Supported fields:
-
-- `text` or `input_text`
-- `audio`
-- `images` (repeatable)
-
-Example:
-
-```bash
-curl -X POST http://127.0.0.1:8000/api/process/ \
-  -F "text=Users report payment failures after the latest deploy" \
-  -F "audio=@inputs/issue-note.wav" \
-  -F "images=@inputs/error-screen.png"
-```
-
-### `POST /api/knowledge/`
-
-Adds a reviewed manual knowledge entry to the knowledge base.
-
-Example payload:
-
-```json
-{
-  "title": "Checkout 502 after deploy",
-  "summary": "Users hit 502 errors after a new release.",
-  "description": "Ingress pointed to a missing service port after deployment. Rolling back and correcting the service mapping resolved it.",
-  "category": "Network",
-  "notes": "Reviewed manually.",
-  "source": "manual"
-}
-```
-
-### `POST /api/knowledge/promote/`
-
-Promotes a reviewed output into the knowledge base.
-
-Example payload:
-
-```json
-{
-  "title": "Worker memory growth after queue spike",
-  "summary": "Background workers exhausted memory after a burst of jobs.",
-  "description": "The most likely cause was unbounded in-memory batching combined with delayed worker recycling.",
-  "category": "Memory",
-  "notes": "Promoted from a reviewed successful run.",
-  "final_output": "Mitigation: reduced batch size, restarted workers, and added memory alerts.",
-  "source": "promoted_output"
-}
-```
+- outputs from previous step IDs
 
 ## Knowledge Base
 
-The backend uses a JSON knowledge store for retrieval and approved knowledge capture.
+The backend can use a local JSON knowledge file for retrieval and promoted knowledge entries.
 
-- Default file: `data/knowledge.json`
-- Path can be overridden with `KNOWLEDGE_DATA_PATH`
-- New entries are written through the API service layer
-- Duplicate entries are skipped using a lightweight title + summary match
-- When knowledge changes, the cached orchestrator is refreshed so later requests use the updated data
+Default path:
+
+```text
+data/knowledge.json
+```
+
+You can keep it small and update it based on the problem statement or demo scenario you are working on.
 
 ## Notes
 
-- The API uses DRF `APIView` classes with multipart parsing for file uploads.
-- The orchestrator instance is cached to avoid rebuilding embeddings on every API request.
-- The RAG layer expects a working embedding endpoint when retrieval is enabled.
-- `app.py` is intentionally kept for non-endpoint testing and debugging.
-
-## Submission Summary
-
-This backend provides:
-
-- multimodal input ingestion
-- configurable LLM orchestration
-- API-based execution
-- persistent reviewed knowledge capture
-- a lightweight structure suitable for rapid adaptation to changing problem statements
+- This backend is optimized for flexibility and quick iteration.
+- The local runner is useful for testing prompts and pipeline behavior before wiring up the frontend.
+- If the configured API endpoint or model IDs are invalid, the backend will fail at runtime even if setup is otherwise correct.
