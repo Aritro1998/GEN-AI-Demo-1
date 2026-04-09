@@ -1,0 +1,12 @@
+# Backend
+Django
+djangorestframework
+openai
+numpy
+python-dotenv
+
+# Frontend
+streamlit
+streamlit-mic-recorder
+requests
+pandas
