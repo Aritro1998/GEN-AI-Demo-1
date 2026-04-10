@@ -30,12 +30,19 @@ st.set_page_config(
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
     html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
 
-    /* Sidebar */
+    /* ── Global dark theme ─────────────────────────────────── */
+    .stApp {
+        background: linear-gradient(160deg, #0b0f1a 0%, #111827 40%, #0f172a 100%);
+    }
+    .stApp * { color: #e2e8f0; }
+
+    /* ── Sidebar ───────────────────────────────────────────── */
     section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0a1628, #162544, #1a3a5c);
+        background: linear-gradient(180deg, #0f0c29, #302b63, #24243e) !important;
+        border-right: 1px solid rgba(139,92,246,0.15);
         overflow: hidden !important;
     }
     section[data-testid="stSidebar"] > div:first-child {
@@ -43,139 +50,177 @@ st.markdown(
         padding-top: 1rem !important;
         padding-bottom: 0.5rem !important;
     }
-    section[data-testid="stSidebar"] * { color: #d0d8e8 !important; }
+    section[data-testid="stSidebar"] * { color: #e0d6ff !important; }
     section[data-testid="stSidebar"] .stButton > button {
         width: 100%;
-        border-radius: 10px;
-        border: 1px solid rgba(255,255,255,0.12);
-        background: rgba(255,255,255,0.05);
-        color: #f0f4ff !important;
+        border-radius: 12px;
+        border: 1px solid rgba(139,92,246,0.2);
+        background: rgba(139,92,246,0.08);
+        color: #f0e6ff !important;
         font-size: 0.88rem;
         font-weight: 600;
         text-align: left;
         padding: 0.55rem 0.9rem;
         margin-bottom: 0.15rem;
+        transition: all 0.2s ease;
     }
     section[data-testid="stSidebar"] .stButton > button:hover {
-        background: rgba(255,255,255,0.12);
-        border-color: rgba(255,255,255,0.25);
+        background: rgba(139,92,246,0.2);
+        border-color: rgba(139,92,246,0.45);
+        transform: translateX(3px);
     }
     section[data-testid="stSidebar"] hr {
         margin: 0.4rem 0 !important;
+        border-color: rgba(139,92,246,0.15) !important;
     }
     .sidebar-brand {
-        font-size: 1.5rem; font-weight: 700; color: #fff;
+        font-size: 1.5rem; font-weight: 800;
+        background: linear-gradient(135deg, #a78bfa, #6ee7b7);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         margin-bottom: 0.1rem;
     }
     .sidebar-tagline {
-        font-size: 0.8rem; color: rgba(200,215,240,0.75);
+        font-size: 0.8rem; color: rgba(200,190,240,0.6) !important;
         margin-bottom: 0.5rem; line-height: 1.4;
     }
     .user-badge {
         text-align: center; margin-bottom: 4px;
     }
     .user-badge .avatar {
-        width: 44px; height: 44px; border-radius: 50%;
-        background: linear-gradient(135deg, #4a90d9, #88c8ff);
+        width: 48px; height: 48px; border-radius: 50%;
+        background: linear-gradient(135deg, #8b5cf6, #06b6d4);
         display: flex; align-items: center; justify-content: center;
-        font-size: 0.95rem; font-weight: 700; color: #fff;
-        margin: 0 auto 4px;
+        font-size: 1rem; font-weight: 700; color: #fff;
+        margin: 0 auto 6px;
+        box-shadow: 0 0 20px rgba(139,92,246,0.35);
     }
     .user-badge .uname {
         font-size: 0.85rem; font-weight: 600; opacity: 0.9;
     }
-    .status-pill {
-        display: inline-block; padding: 4px 14px; border-radius: 16px;
-        font-size: 0.78rem; font-weight: 600; letter-spacing: 0.3px;
-    }
-    .status-on  { background: #00c853; color: #fff; }
-    .status-off { background: #ff1744; color: #fff; }
 
-    /* Cards */
+    /* ── Metrics ───────────────────────────────────────────── */
+    [data-testid="stMetric"] {
+        background: linear-gradient(135deg, rgba(139,92,246,0.12), rgba(6,182,212,0.08));
+        border: 1px solid rgba(139,92,246,0.15);
+        border-radius: 16px; padding: 16px !important;
+    }
+    [data-testid="stMetricValue"] {
+        font-size: 2rem !important; font-weight: 800 !important;
+        background: linear-gradient(135deg, #a78bfa, #22d3ee);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    }
+
+    /* ── Policy Cards ──────────────────────────────────────── */
     .policy-card {
-        background: linear-gradient(135deg, #1e3a5f 0%, #2d5986 100%);
-        border-radius: 16px; padding: 24px; color: #fff;
-        box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-        margin-bottom: 12px; min-height: 160px;
+        background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+        border-radius: 20px; padding: 26px; color: #fff;
+        box-shadow: 0 8px 32px rgba(99,102,241,0.2);
+        margin-bottom: 14px; min-height: 170px;
         display: flex; flex-direction: column; justify-content: space-between;
+        border: 1px solid rgba(139,92,246,0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .policy-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 40px rgba(99,102,241,0.35);
     }
     .policy-card .card-cat {
-        font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px;
-        opacity: 0.8; margin-bottom: 4px;
+        font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1.5px;
+        color: #a5b4fc; margin-bottom: 6px;
     }
     .policy-card .card-tier {
-        font-size: 1.35rem; font-weight: 700; margin-bottom: 6px;
+        font-size: 1.4rem; font-weight: 700; margin-bottom: 6px;
     }
     .policy-card .card-num {
-        font-size: 0.85rem; opacity: 0.7; font-family: monospace;
+        font-size: 0.82rem; opacity: 0.6; font-family: monospace;
     }
     .policy-card .card-price {
-        font-size: 1.1rem; font-weight: 600; margin-top: 8px;
+        font-size: 1.15rem; font-weight: 700; margin-top: 10px;
+        color: #6ee7b7;
     }
 
+    /* ── Recommendation Cards ──────────────────────────────── */
     .rec-card {
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 14px; padding: 20px; margin-bottom: 12px;
-        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(139,92,246,0.15);
+        border-radius: 18px; padding: 22px; margin-bottom: 14px;
+        background: linear-gradient(135deg, rgba(30,27,75,0.6), rgba(49,46,129,0.3));
+        backdrop-filter: blur(12px);
+        transition: border-color 0.2s ease;
+    }
+    .rec-card:hover {
+        border-color: rgba(139,92,246,0.4);
     }
     .rec-badge-upgrade {
-        display: inline-block; padding: 3px 10px; border-radius: 10px;
-        font-size: 0.72rem; font-weight: 700; background: #4caf50; color: #fff;
-        margin-bottom: 8px;
+        display: inline-block; padding: 4px 12px; border-radius: 20px;
+        font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #059669, #10b981); color: #fff;
+        margin-bottom: 10px;
     }
     .rec-badge-loan {
-        display: inline-block; padding: 3px 10px; border-radius: 10px;
-        font-size: 0.72rem; font-weight: 700; background: #2196f3; color: #fff;
-        margin-bottom: 8px;
+        display: inline-block; padding: 4px 12px; border-radius: 20px;
+        font-size: 0.7rem; font-weight: 700; letter-spacing: 0.5px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4); color: #fff;
+        margin-bottom: 10px;
     }
 
-    /* Offering cards */
+    /* ── Offering Cards ────────────────────────────────────── */
     .offering-card {
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 14px; padding: 18px; margin-bottom: 10px;
-        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(139,92,246,0.15);
+        border-radius: 18px; padding: 20px; margin-bottom: 12px;
+        background: linear-gradient(145deg, rgba(30,27,75,0.5), rgba(15,23,42,0.8));
+        backdrop-filter: blur(10px);
+        transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+    .offering-card:hover {
+        transform: translateY(-3px);
+        border-color: rgba(139,92,246,0.4);
     }
     .offering-cat {
         font-size: 1.15rem; font-weight: 700; margin-bottom: 10px;
     }
     .tier-row {
         display: flex; align-items: center; justify-content: space-between;
-        padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+        padding: 8px 0; border-bottom: 1px solid rgba(139,92,246,0.08);
     }
     .tier-row:last-child { border-bottom: none; }
     .tier-name { font-weight: 600; }
-    .tier-price { opacity: 0.7; font-size: 0.9rem; }
-    .tier-badge-silver { color: #b0bec5; }
-    .tier-badge-gold { color: #ffd54f; }
-    .tier-badge-platinum { color: #b388ff; }
+    .tier-price {
+        font-weight: 600; font-size: 0.88rem;
+        color: #6ee7b7;
+    }
+    .tier-badge-silver { color: #94a3b8; }
+    .tier-badge-gold { color: #fbbf24; }
+    .tier-badge-platinum { color: #c084fc; }
 
-    /* Divider */
+    /* ── Divider ───────────────────────────────────────────── */
     .divider {
-        height: 2px; border-radius: 1px; margin: 28px 0;
-        background: linear-gradient(90deg, #1e3a5f, #4a90d9, #1e3a5f);
+        height: 2px; border-radius: 2px; margin: 28px 0;
+        background: linear-gradient(90deg, transparent, #8b5cf6, #06b6d4, transparent);
     }
 
-    /* Buttons */
+    /* ── Buttons ───────────────────────────────────────────── */
     .stButton > button {
-        border-radius: 10px; font-weight: 600; padding: 0.5rem 1.6rem;
-        transition: transform .12s ease, box-shadow .12s ease;
+        border-radius: 12px; font-weight: 600; padding: 0.5rem 1.6rem;
+        transition: all 0.2s ease;
+        border: 1px solid rgba(139,92,246,0.2);
     }
     .stButton > button:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 4px 14px rgba(30,58,95,0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(139,92,246,0.25);
+        border-color: rgba(139,92,246,0.4);
     }
 
-    /* Login hero */
+    /* ── Login Hero ────────────────────────────────────────── */
     .login-hero {
         text-align: center; padding: 48px 20px 12px;
     }
     .login-hero h1 {
-        font-size: 2.6rem; font-weight: 800; margin-bottom: 6px;
-        background: linear-gradient(135deg, #4a90d9, #88c8ff);
+        font-size: 2.8rem; font-weight: 800; margin-bottom: 6px;
+        background: linear-gradient(135deg, #a78bfa, #6ee7b7, #22d3ee);
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     }
     .login-hero .tagline {
-        font-size: 1.1rem; opacity: 0.7; max-width: 540px;
+        font-size: 1.05rem; color: #94a3b8; max-width: 540px;
         margin: 0 auto 8px; line-height: 1.6;
     }
     .login-hero .features {
@@ -187,22 +232,153 @@ st.markdown(
     }
     .login-hero .feat-icon { font-size: 1.6rem; margin-bottom: 4px; }
     .login-hero .feat-label {
-        font-size: 0.82rem; font-weight: 600; opacity: 0.8;
+        font-size: 0.82rem; font-weight: 600; color: #a5b4fc;
     }
 
-    /* Login form styling */
+    /* ── Login Form ────────────────────────────────────────── */
     .login-container {
         max-width: 420px; margin: 20px auto; padding: 36px;
-        border-radius: 20px;
-        background: linear-gradient(145deg, #0e1a2e, #1a3050);
-        box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+        border-radius: 22px;
+        background: linear-gradient(145deg, #1e1b4b, #312e81);
+        box-shadow: 0 16px 48px rgba(99,102,241,0.2);
+        border: 1px solid rgba(139,92,246,0.2);
         text-align: center; color: #e0e8f5;
     }
     .login-container h2 {
         color: #fff; margin-bottom: 4px; font-size: 1.4rem;
     }
     .login-container p {
-        color: rgba(200,215,240,0.7); font-size: 0.88rem; margin-bottom: 16px;
+        color: rgba(200,200,240,0.6); font-size: 0.88rem; margin-bottom: 16px;
+    }
+
+    /* ── Inputs ─────────────────────────────────────────────── */
+    .stTextInput input {
+        background: rgba(30,27,75,0.5) !important;
+        border: 1px solid rgba(139,92,246,0.2) !important;
+        border-radius: 10px !important;
+        color: #e2e8f0 !important;
+    }
+    .stTextInput input:focus {
+        border-color: #8b5cf6 !important;
+        box-shadow: 0 0 0 2px rgba(139,92,246,0.2) !important;
+    }
+    .stSelectbox > div > div {
+        background: rgba(30,27,75,0.5) !important;
+        border: 1px solid rgba(139,92,246,0.2) !important;
+        border-radius: 10px !important;
+    }
+
+    /* ── Expander ──────────────────────────────────────────── */
+    .streamlit-expanderHeader,
+    [data-testid="stExpander"] summary,
+    details summary,
+    [data-testid="stExpander"] [data-testid="stExpanderToggleDetails"],
+    .st-expander summary {
+        background: #1e1b4b !important;
+        border-radius: 12px !important;
+        border: 1px solid rgba(139,92,246,0.2) !important;
+        color: #e2e8f0 !important;
+    }
+    [data-testid="stExpander"] summary:hover,
+    details summary:hover {
+        border-color: rgba(139,92,246,0.4) !important;
+    }
+    [data-testid="stExpander"] summary *,
+    details summary * {
+        color: #e2e8f0 !important;
+        -webkit-text-fill-color: #e2e8f0 !important;
+        background: none !important;
+    }
+    [data-testid="stExpander"],
+    [data-testid="stExpander"][open],
+    details[open] {
+        background: rgba(15,12,41,0.6) !important;
+        border: 1px solid rgba(139,92,246,0.12) !important;
+        border-radius: 14px !important;
+    }
+    [data-testid="stExpander"] > div,
+    details > div {
+        background: transparent !important;
+    }
+
+    /* ── Code / monospace ──────────────────────────────────── */
+    code {
+        background: rgba(139,92,246,0.15) !important;
+        color: #c4b5fd !important;
+        padding: 2px 6px; border-radius: 4px;
+    }
+
+    /* ── Section headings ──────────────────────────────────── */
+    h1, h2, h3 {
+        background: linear-gradient(135deg, #c4b5fd, #6ee7b7);
+        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }
+
+    /* ── Chat ──────────────────────────────────────────────── */
+    .stChatMessage {
+        border-radius: 16px !important;
+        border: 1px solid rgba(139,92,246,0.1) !important;
+        background: rgba(30,27,75,0.3) !important;
+    }
+    [data-testid="stChatInput"],
+    [data-testid="stChatInput"] > div,
+    [data-testid="stChatInput"] > div > div,
+    .stChatInput, .stChatInput > div {
+        background: #ffffff !important;
+        border-color: rgba(139,92,246,0.35) !important;
+        border-radius: 12px !important;
+    }
+    [data-testid="stChatInput"] textarea,
+    .stChatInput textarea,
+    [data-testid="stChatInputTextArea"],
+    [data-testid="stChatInput"] [data-testid="stChatInputTextArea"] {
+        background: transparent !important;
+        color: #111 !important;
+        caret-color: #8b5cf6 !important;
+        -webkit-text-fill-color: #111 !important;
+    }
+    [data-testid="stBottom"] {
+        background: transparent !important;
+    }
+
+    /* ── Text selection highlight ──────────────────────────── */
+    ::selection {
+        background: rgba(139,92,246,0.45) !important;
+        color: #fff !important;
+        -webkit-text-fill-color: #fff !important;
+    }
+    ::-moz-selection {
+        background: rgba(139,92,246,0.45) !important;
+        color: #fff !important;
+    }
+    [data-testid="stChatInput"] button,
+    .stChatInput button {
+        background: linear-gradient(135deg, #8b5cf6, #06b6d4) !important;
+        color: #fff !important;
+    }
+
+    /* ── Form submit / download buttons ────────────────────── */
+    .stFormSubmitButton > button,
+    .stDownloadButton > button {
+        background: linear-gradient(135deg, #8b5cf6, #6d28d9) !important;
+        color: #fff !important;
+        border: none !important;
+        font-weight: 600;
+    }
+    .stFormSubmitButton > button:hover,
+    .stDownloadButton > button:hover {
+        background: linear-gradient(135deg, #a78bfa, #7c3aed) !important;
+        box-shadow: 0 6px 24px rgba(139,92,246,0.35) !important;
+    }
+
+    /* ── Captions / labels ─────────────────────────────────── */
+    .stCaption, small { color: #94a3b8 !important; }
+    label { color: #c4b5fd !important; -webkit-text-fill-color: #c4b5fd !important; }
+
+    /* ── Password eye icon ─────────────────────────────────── */
+    .stTextInput button {
+        color: #94a3b8 !important;
     }
     </style>
     """,
