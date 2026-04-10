@@ -35,8 +35,37 @@ st.markdown(
         background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
     }
     section[data-testid="stSidebar"] * { color: #e0e0e0 !important; }
-    section[data-testid="stSidebar"] .stRadio label:hover { color: #fff !important; }
-
+    section[data-testid="stSidebar"] .stButton > button {
+        width: 100%;
+        border-radius: 14px;
+        border: 1px solid rgba(255,255,255,0.14);
+        background: rgba(255,255,255,0.06);
+        color: #f4f5ff !important;
+        font-size: 1.06rem;
+        font-weight: 600;
+        text-align: left;
+        padding: 0.9rem 1rem;
+        margin-bottom: 0.55rem;
+        box-shadow: none;
+    }
+    section[data-testid="stSidebar"] .stButton > button:hover {
+        border-color: rgba(255,255,255,0.24);
+        background: rgba(255,255,255,0.12);
+        transform: translateY(-1px);
+    }
+    .sidebar-title {
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.15;
+        margin-bottom: 0.6rem;
+        color: #ffffff;
+    }
+    .sidebar-subtitle {
+        font-size: 1.03rem;
+        line-height: 1.6;
+        color: rgba(232, 235, 255, 0.82);
+        margin-bottom: 1rem;
+    }
     /* ---- Status badge ---- */
     .status-badge {
         display: inline-block; padding: 6px 18px; border-radius: 20px;
@@ -49,10 +78,21 @@ st.markdown(
     .metric-card {
         background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
         border-radius: 16px; padding: 28px; color: #fff; text-align: center;
+        min-height: 190px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         box-shadow: 0 8px 32px rgba(102,126,234,.25);
     }
     .metric-card h2 { margin: 0 0 4px; font-size: 2rem; }
-    .metric-card p  { margin: 0; opacity: .85; font-size: .95rem; }
+    .metric-card p  {
+        margin: 0 auto;
+        opacity: .9;
+        font-size: 1rem;
+        line-height: 1.55;
+        max-width: 18rem;
+        text-wrap: balance;
+    }
 
     .result-card {
         background: #ffffff08; border: 1px solid #ffffff18;
@@ -146,19 +186,41 @@ def post_promote(payload: dict) -> dict:
     return r.json()
 
 
+NAV_ITEMS = [
+    ("dashboard", "🏠 Dashboard"),
+    ("analyze", "⚡ Analyze Incident"),
+    ("knowledge", "📚 Add Knowledge"),
+]
+
+
+def set_page(page_key: str):
+    """Persist the selected page in Streamlit session state."""
+    st.session_state["page_key"] = page_key
+
+
 # ---------------------------------------------------------------------------
 # Sidebar navigation
 # ---------------------------------------------------------------------------
 with st.sidebar:
-    st.markdown("## 🔍 Incident Analyzer")
-    st.caption("AI-powered infrastructure RCA platform")
+    if "page_key" not in st.session_state:
+        st.session_state["page_key"] = "dashboard"
+
+    st.markdown('<div class="sidebar-title">Incident Analyzer</div>', unsafe_allow_html=True)
+    st.markdown(
+        '<div class="sidebar-subtitle">A streamlined interface for multimodal incident review, analysis, and knowledge capture.</div>',
+        unsafe_allow_html=True,
+    )
     st.markdown("---")
 
-    page = st.radio(
-        "Navigate",
-        ["🏠 Dashboard", "⚡ Analyze Incident", "📚 Add Knowledge"],
-        label_visibility="collapsed",
-    )
+    for key, label in NAV_ITEMS:
+        if st.button(label, key=f"nav_{key}", use_container_width=True):
+            set_page(key)
+
+    page = {
+        "dashboard": "🏠 Dashboard",
+        "analyze": "⚡ Analyze Incident",
+        "knowledge": "📚 Add Knowledge",
+    }[st.session_state["page_key"]]
 
     st.markdown("---")
     # Live health indicator
@@ -316,6 +378,11 @@ elif page == "⚡ Analyze Incident":
         st.caption("If this analysis looks accurate, promote it so future incidents benefit from RAG retrieval.")
 
         with st.form("promote_from_result"):
+            auto_format = st.checkbox(
+                "Auto-format approved output into knowledge schema",
+                value=True,
+                help="Uses the reviewed RCA and analysis to generate a compact knowledge entry automatically.",
+            )
             p_title = st.text_input("Title", placeholder="Short title for this incident")
             p_summary = st.text_input("Summary", placeholder="One-line summary")
             p_category = st.selectbox("Category", CATEGORIES, index=CATEGORIES.index(classification) if classification in CATEGORIES else 4)
@@ -324,8 +391,8 @@ elif page == "⚡ Analyze Incident":
             promote_clicked = st.form_submit_button("🚀  Promote to Knowledge", use_container_width=True)
 
         if promote_clicked:
-            if not p_title.strip() or not p_summary.strip():
-                st.warning("Title and Summary are required to promote.")
+            if not auto_format and (not p_title.strip() or not p_summary.strip()):
+                st.warning("Title and Summary are required for manual promotion.")
             else:
                 final_output_text = step_outputs.get("final_output", output.get("final_output", ""))
                 analysis_text = step_outputs.get("analysis", "")
@@ -336,6 +403,10 @@ elif page == "⚡ Analyze Incident":
                     "category": p_category,
                     "notes": p_notes.strip(),
                     "final_output": final_output_text,
+                    "analysis": analysis_text,
+                    "classification": classification if classification in CATEGORIES else "Others",
+                    "original_input": output.get("combined_input", ""),
+                    "auto_format": auto_format,
                     "source": "promoted_output",
                 }
                 try:
