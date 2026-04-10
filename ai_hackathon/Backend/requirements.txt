@@ -1,5 +1,7 @@
-openai
-numpy
-python-dotenv
 Django
 djangorestframework
+openai
+python-dotenv
+PyPDF2
+tiktoken
+numpy

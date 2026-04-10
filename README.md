@@ -88,7 +88,7 @@ Create one shared virtual environment for both backend and frontend:
 
 ```bash
 cd ai_hackathon
-python3 -m venv .venv
+python -m venv .venv
 ```
 
 Activate it with the command for your OS:

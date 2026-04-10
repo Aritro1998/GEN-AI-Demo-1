@@ -1,4 +1,4 @@
-# Policy Lens — Frontend
+# PolicyHub — Frontend
 
 Streamlit-based UI for the insurance policy platform.
 
@@ -29,8 +29,8 @@ Opens at `http://localhost:8501`. Backend must be running on port 8000.
 
 | Username | Password | Policies |
 |----------|----------|----------|
-| swarnali | swarnali123 | Car Gold, Health Silver |
-| aritro | aritro123 | Car Silver, Life Gold |
+| alice | alice123 | Car Gold, Health Silver |
+| bob | bob123 | Car Silver, Home Gold |
 
 ## Configuration
 

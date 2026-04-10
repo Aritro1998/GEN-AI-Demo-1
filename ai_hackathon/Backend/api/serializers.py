@@ -1,30 +1,76 @@
-"""DRF serializers for generic API request validation."""
+"""DRF serializers for the insurance policy query API."""
 
 from rest_framework import serializers
 
-
-class KnowledgeEntrySerializer(serializers.Serializer):
-    """Validate a manual knowledge entry before writing it to disk."""
-
-    title = serializers.CharField(max_length=200)
-    summary = serializers.CharField()
-    description = serializers.CharField()
-    category = serializers.CharField(max_length=50, default="Others")
-    notes = serializers.CharField(allow_blank=True, required=False, default="")
-    source = serializers.CharField(max_length=50, required=False, default="manual")
+from api.models import PolicyCategory, PolicyTier, UserPolicy
 
 
-class PromoteKnowledgeSerializer(serializers.Serializer):
-    """Validate payloads that promote a reviewed output into the knowledge base."""
+class ChatMessageSerializer(serializers.Serializer):
+    """A single message in the conversation history."""
 
-    title = serializers.CharField(max_length=200, required=False, allow_blank=True, default="")
-    summary = serializers.CharField(required=False, allow_blank=True, default="")
-    description = serializers.CharField(required=False, allow_blank=True, default="")
-    category = serializers.CharField(max_length=50, required=False, default="Others")
-    notes = serializers.CharField(allow_blank=True, required=False, default="")
-    source = serializers.CharField(max_length=50, required=False, default="promoted_output")
-    final_output = serializers.CharField(required=False, allow_blank=True, default="")
-    analysis = serializers.CharField(required=False, allow_blank=True, default="")
-    classification = serializers.CharField(required=False, allow_blank=True, default="")
-    original_input = serializers.CharField(required=False, allow_blank=True, default="")
-    auto_format = serializers.BooleanField(required=False, default=False)
+    role = serializers.ChoiceField(choices=["user", "assistant"])
+    content = serializers.CharField()
+
+
+class PolicyQuerySerializer(serializers.Serializer):
+    """Validate an insurance policy question with optional chat history."""
+
+    question = serializers.CharField()
+    user_policy_id = serializers.IntegerField(required=False, default=None)
+    chat_history = ChatMessageSerializer(many=True, required=False, default=[])
+
+
+class PolicyUploadSerializer(serializers.Serializer):
+    """Validate admin policy PDF upload — requires a tier to attach to."""
+
+    tier_id = serializers.IntegerField()
+    file = serializers.FileField()
+
+    def validate_tier_id(self, value):
+        if not PolicyTier.objects.filter(pk=value).exists():
+            raise serializers.ValidationError(f"PolicyTier with id={value} not found.")
+        return value
+
+    def validate_file(self, value):
+        if not value.name.lower().endswith(".pdf"):
+            raise serializers.ValidationError("Only PDF files are supported.")
+        return value
+
+
+class UserPolicyAssignSerializer(serializers.Serializer):
+    """Assign a policy tier to a user."""
+
+    user_id = serializers.IntegerField()
+    tier_id = serializers.IntegerField()
+    policy_number = serializers.CharField(max_length=50)
+    start_date = serializers.DateField()
+    end_date = serializers.DateField()
+
+
+class PolicyCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PolicyCategory
+        fields = ["id", "name", "description", "icon"]
+
+
+class PolicyTierSerializer(serializers.ModelSerializer):
+    category = PolicyCategorySerializer(read_only=True)
+
+    class Meta:
+        model = PolicyTier
+        fields = ["id", "category", "name", "display_name", "price_monthly", "highlights"]
+
+
+class UserPolicySerializer(serializers.ModelSerializer):
+    tier = PolicyTierSerializer(read_only=True)
+    has_document = serializers.SerializerMethodField()
+
+    class Meta:
+        model = UserPolicy
+        fields = ["id", "tier", "policy_number", "start_date", "end_date", "is_active", "has_document"]
+
+    def get_has_document(self, obj):
+        from api.models import PolicyDocument
+        return PolicyDocument.objects.filter(
+            tier=obj.tier, pdf_file__isnull=False,
+        ).exclude(pdf_file="").exists()

@@ -11,15 +11,17 @@ API_BASE = "http://127.0.0.1:8000/api"
 CATEGORY_ICONS = {
     "Car": "\U0001f697",
     "Health": "\U0001fa7a",
-    "Life": "\U0001f6e1\ufe0f",
+    "Home": "\U0001f3e0",
+    "Life": "\U0001f9ec",
+    "Travel": "\u2708\ufe0f",
 }
 
 # ---------------------------------------------------------------------------
 # Page config
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Policy Lens",
-    page_icon="\U0001f50d",
+    page_title="PolicyHub",
+    page_icon="\U0001f6e1\ufe0f",
     layout="wide",
     initial_sidebar_state="expanded",
 )
@@ -36,53 +38,31 @@ st.markdown(
     /* Sidebar */
     section[data-testid="stSidebar"] {
         background: linear-gradient(180deg, #0a1628, #162544, #1a3a5c);
-        overflow: hidden !important;
-    }
-    section[data-testid="stSidebar"] > div:first-child {
-        overflow: hidden !important;
-        padding-top: 1rem !important;
-        padding-bottom: 0.5rem !important;
     }
     section[data-testid="stSidebar"] * { color: #d0d8e8 !important; }
     section[data-testid="stSidebar"] .stButton > button {
         width: 100%;
-        border-radius: 10px;
+        border-radius: 12px;
         border: 1px solid rgba(255,255,255,0.12);
         background: rgba(255,255,255,0.05);
         color: #f0f4ff !important;
-        font-size: 0.88rem;
+        font-size: 1rem;
         font-weight: 600;
         text-align: left;
-        padding: 0.55rem 0.9rem;
-        margin-bottom: 0.15rem;
+        padding: 0.8rem 1rem;
+        margin-bottom: 0.4rem;
     }
     section[data-testid="stSidebar"] .stButton > button:hover {
         background: rgba(255,255,255,0.12);
         border-color: rgba(255,255,255,0.25);
     }
-    section[data-testid="stSidebar"] hr {
-        margin: 0.4rem 0 !important;
-    }
     .sidebar-brand {
-        font-size: 1.5rem; font-weight: 700; color: #fff;
-        margin-bottom: 0.1rem;
+        font-size: 1.8rem; font-weight: 700; color: #fff;
+        margin-bottom: 0.2rem;
     }
     .sidebar-tagline {
-        font-size: 0.8rem; color: rgba(200,215,240,0.75);
-        margin-bottom: 0.5rem; line-height: 1.4;
-    }
-    .user-badge {
-        text-align: center; margin-bottom: 4px;
-    }
-    .user-badge .avatar {
-        width: 44px; height: 44px; border-radius: 50%;
-        background: linear-gradient(135deg, #4a90d9, #88c8ff);
-        display: flex; align-items: center; justify-content: center;
-        font-size: 0.95rem; font-weight: 700; color: #fff;
-        margin: 0 auto 4px;
-    }
-    .user-badge .uname {
-        font-size: 0.85rem; font-weight: 600; opacity: 0.9;
+        font-size: 0.92rem; color: rgba(200,215,240,0.75);
+        margin-bottom: 1.2rem; line-height: 1.5;
     }
     .status-pill {
         display: inline-block; padding: 4px 14px; border-radius: 16px;
@@ -129,26 +109,6 @@ st.markdown(
         margin-bottom: 8px;
     }
 
-    /* Offering cards */
-    .offering-card {
-        border: 1px solid rgba(255,255,255,0.1);
-        border-radius: 14px; padding: 18px; margin-bottom: 10px;
-        background: rgba(255,255,255,0.03);
-    }
-    .offering-cat {
-        font-size: 1.15rem; font-weight: 700; margin-bottom: 10px;
-    }
-    .tier-row {
-        display: flex; align-items: center; justify-content: space-between;
-        padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
-    }
-    .tier-row:last-child { border-bottom: none; }
-    .tier-name { font-weight: 600; }
-    .tier-price { opacity: 0.7; font-size: 0.9rem; }
-    .tier-badge-silver { color: #b0bec5; }
-    .tier-badge-gold { color: #ffd54f; }
-    .tier-badge-platinum { color: #b388ff; }
-
     /* Divider */
     .divider {
         height: 2px; border-radius: 1px; margin: 28px 0;
@@ -165,44 +125,19 @@ st.markdown(
         box-shadow: 0 4px 14px rgba(30,58,95,0.3);
     }
 
-    /* Login hero */
-    .login-hero {
-        text-align: center; padding: 48px 20px 12px;
-    }
-    .login-hero h1 {
-        font-size: 2.6rem; font-weight: 800; margin-bottom: 6px;
-        background: linear-gradient(135deg, #4a90d9, #88c8ff);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-    }
-    .login-hero .tagline {
-        font-size: 1.1rem; opacity: 0.7; max-width: 540px;
-        margin: 0 auto 8px; line-height: 1.6;
-    }
-    .login-hero .features {
-        display: flex; justify-content: center; gap: 28px;
-        margin-top: 18px; flex-wrap: wrap;
-    }
-    .login-hero .feat {
-        text-align: center; min-width: 110px;
-    }
-    .login-hero .feat-icon { font-size: 1.6rem; margin-bottom: 4px; }
-    .login-hero .feat-label {
-        font-size: 0.82rem; font-weight: 600; opacity: 0.8;
-    }
-
     /* Login form styling */
     .login-container {
-        max-width: 420px; margin: 20px auto; padding: 36px;
+        max-width: 420px; margin: 80px auto; padding: 40px;
         border-radius: 20px;
         background: linear-gradient(145deg, #0e1a2e, #1a3050);
         box-shadow: 0 12px 40px rgba(0,0,0,0.3);
         text-align: center; color: #e0e8f5;
     }
     .login-container h2 {
-        color: #fff; margin-bottom: 4px; font-size: 1.4rem;
+        color: #fff; margin-bottom: 4px; font-size: 1.6rem;
     }
     .login-container p {
-        color: rgba(200,215,240,0.7); font-size: 0.88rem; margin-bottom: 16px;
+        color: rgba(200,215,240,0.7); font-size: 0.92rem; margin-bottom: 24px;
     }
     </style>
     """,
@@ -284,84 +219,18 @@ def nav(page_key):
 # LOGIN SCREEN
 # ---------------------------------------------------------------------------
 if not st.session_state.token:
-    # Hide sidebar and make the page fill the viewport
     st.markdown(
-        """
-        <style>
-        section[data-testid="stSidebar"] { display: none; }
-        .block-container { padding-top: 1.5rem !important; padding-bottom: 0 !important; max-width: 100% !important; }
-        header[data-testid="stHeader"] { display: none; }
-        </style>
-        """,
+        '<div class="login-container">'
+        '<h2>\U0001f6e1\ufe0f PolicyHub</h2>'
+        '<p>Sign in to access your insurance policies</p>'
+        '</div>',
         unsafe_allow_html=True,
     )
 
-    left_col, spacer, right_col = st.columns([1.4, 0.1, 0.9])
-
-    # ── LEFT: Hero + Offerings ────────────────────────────────────
-    with left_col:
-        st.markdown(
-            '<div class="login-hero" style="text-align:left;padding:16px 0 0;">'
-            '<h1>\U0001f50d Policy Lens</h1>'
-            '<p class="tagline" style="margin:0 0 12px;">'
-            'AI-powered insurance platform \u2014 manage policies, '
-            'get instant answers, and smart recommendations.'
-            '</p>'
-            '<div class="features" style="justify-content:flex-start;gap:20px;margin-top:12px;">'
-            '<div class="feat"><div class="feat-icon">\U0001f6e1\ufe0f</div><div class="feat-label">Multi-tier Coverage</div></div>'
-            '<div class="feat"><div class="feat-icon">\U0001f4b0</div><div class="feat-label">Affordable Plans</div></div>'
-            '<div class="feat"><div class="feat-icon">\U0001f916</div><div class="feat-label">AI-Powered</div></div>'
-            '<div class="feat"><div class="feat-icon">\u26a1</div><div class="feat-label">Instant Answers</div></div>'
-            '</div>'
-            '</div>',
-            unsafe_allow_html=True,
-        )
-
-        st.markdown("<div style='margin-top:18px'></div>", unsafe_allow_html=True)
-        st.markdown("##### Our Offerings")
-
-        try:
-            off_r = requests.get(f"{API_BASE}/offerings/", timeout=5)
-            if off_r.status_code == 200:
-                categories = off_r.json().get("categories", [])
-                if categories:
-                    off_cols = st.columns(min(len(categories), 3))
-                    for idx, cat in enumerate(categories):
-                        icon = CATEGORY_ICONS.get(cat["name"], "\U0001f4c4")
-                        with off_cols[idx % len(off_cols)]:
-                            tier_rows = ""
-                            for t in cat["tiers"]:
-                                badge_cls = f"tier-badge-{t['name']}"
-                                price = f"\u20b9{t['price_monthly']:.0f}/mo" if t["price_monthly"] else ""
-                                tier_rows += (
-                                    f'<div class="tier-row">'
-                                    f'<span class="tier-name {badge_cls}">{t["display_name"]}</span>'
-                                    f'<span class="tier-price">{price}</span>'
-                                    f'</div>'
-                                )
-                            st.markdown(
-                                f'<div class="offering-card">'
-                                f'<div class="offering-cat">{icon} {cat["name"]}</div>'
-                                f'<div style="font-size:0.78rem;opacity:0.65;margin-bottom:6px;">{cat["description"]}</div>'
-                                f'{tier_rows}'
-                                f'</div>',
-                                unsafe_allow_html=True,
-                            )
-        except Exception:
-            pass
-
-    # ── RIGHT: Sign-in form ───────────────────────────────────────
-    with right_col:
-        st.markdown("<div style='margin-top:28px'></div>", unsafe_allow_html=True)
-        st.markdown(
-            '<div class="login-container" style="max-width:100%;margin:0;">'
-            '<h2>\U0001f512 Sign In</h2>'
-            '<p>Access your personalised policy dashboard</p>'
-            '</div>',
-            unsafe_allow_html=True,
-        )
+    col_l, col_c, col_r = st.columns([1, 1.2, 1])
+    with col_c:
         with st.form("login_form"):
-            username = st.text_input("Username", placeholder="e.g. swarnali")
+            username = st.text_input("Username", placeholder="e.g. alice")
             password = st.text_input("Password", type="password", placeholder="Enter password")
             submitted = st.form_submit_button("Sign In", use_container_width=True)
 
@@ -375,7 +244,7 @@ if not st.session_state.token:
                 else:
                     st.error(err)
 
-        st.caption("Demo: **swarnali** / swarnali123  \u2022  **aritro** / aritro123")
+        st.caption("Demo accounts: **alice** / alice123  |  **bob** / bob123")
 
     st.stop()
 
@@ -384,25 +253,18 @@ if not st.session_state.token:
 # SIDEBAR (logged in)
 # ---------------------------------------------------------------------------
 with st.sidebar:
+    st.markdown(
+        '<div class="sidebar-brand">\U0001f6e1\ufe0f PolicyHub</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        '<div class="sidebar-tagline">Your insurance policies, AI-powered Q&A, and smart recommendations.</div>',
+        unsafe_allow_html=True,
+    )
+    st.markdown("---")
+
     user = st.session_state.user
-    initials = user['username'][:2].upper()
-    st.markdown(
-        f'<div class="user-badge">'
-        f'<div class="avatar">{initials}</div>'
-        f'<div class="uname">{user["username"]}</div>'
-        f'</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown("---")
-    st.markdown(
-        '<div class="sidebar-brand">\U0001f50d Policy Lens</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        '<div class="sidebar-tagline">AI-powered insurance platform</div>',
-        unsafe_allow_html=True,
-    )
-    st.markdown("---")
+    st.markdown(f"**{user['username']}**")
 
     if st.button("\U0001f3e0 Dashboard", key="nav_dash", use_container_width=True):
         nav("dashboard")
@@ -419,6 +281,14 @@ with st.sidebar:
         do_logout()
         st.rerun()
 
+    st.markdown("---")
+    ok = check_health()
+    pill = "status-on" if ok else "status-off"
+    lbl = "Online" if ok else "Offline"
+    st.markdown(
+        f'<div style="text-align:center"><span class="status-pill {pill}">Backend {lbl}</span></div>',
+        unsafe_allow_html=True,
+    )
 
 
 # ---------------------------------------------------------------------------
@@ -468,82 +338,13 @@ if st.session_state.page == "dashboard":
 
     st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
 
-    # ── Inline Recommendations ───────────────────────────────────────
     if rec_summary["total"] > 0:
-        st.markdown("### \u2b50 Recommendations for You")
-        with st.spinner("Generating personalised recommendations..."):
-            rec_r = api_get("/recommendations/")
-
-        if rec_r.status_code == 200:
-            recs = rec_r.json().get("recommendations", [])
-            for rec in recs:
-                rec_type = rec.get("type", "")
-                badge_cls = "rec-badge-upgrade" if rec_type == "upgrade" else "rec-badge-loan"
-                badge_txt = "UPGRADE" if rec_type == "upgrade" else "LOAN"
-
-                if rec_type == "upgrade":
-                    title = f'{rec["category"]} \u2014 {rec["current_display"]} \u2192 {rec["recommended_display"]}'
-                    sub_line = ""
-                    if rec.get("current_price") and rec.get("recommended_price"):
-                        sub_line = (
-                            f'<div style="margin:4px 0 8px;font-size:0.9rem;opacity:0.75;">'
-                            f'\u20b9{rec["current_price"]:.0f}/mo \u2192 '
-                            f'\u20b9{rec["recommended_price"]:.0f}/mo '
-                            f'(+\u20b9{rec["price_difference"]:.0f}/mo)</div>'
-                        )
-                else:
-                    title = f'{rec["category"]} \u2014 Loan against {rec["tier_display"]}'
-                    sub_line = (
-                        f'<div style="margin:4px 0 8px;font-size:0.9rem;opacity:0.75;">'
-                        f'Policy {rec["policy_number"]} \u2022 {rec["months_remaining"]} months remaining</div>'
-                    )
-
-                desc = rec.get("description", "")
-                st.markdown(
-                    f'<div class="rec-card">'
-                    f'<span class="{badge_cls}">{badge_txt}</span>'
-                    f'<div style="font-size:1.1rem;font-weight:600;margin-bottom:2px;">{title}</div>'
-                    f'{sub_line}'
-                    f'<div style="opacity:0.85;line-height:1.6;">{desc}</div>'
-                    f'</div>',
-                    unsafe_allow_html=True,
-                )
-        else:
-            st.info("Recommendations are temporarily unavailable.")
-
-    st.markdown('<div class="divider"></div>', unsafe_allow_html=True)
-
-    # ── Our Offerings ────────────────────────────────────────────────
-    st.markdown("### \U0001f4cb Our Offerings")
-    st.caption("All available policy categories and tiers.")
-
-    off_r = api_get("/offerings/")
-    if off_r.status_code == 200:
-        categories = off_r.json().get("categories", [])
-        off_cols = st.columns(min(len(categories), 3)) if categories else []
-        for idx, cat in enumerate(categories):
-            icon = CATEGORY_ICONS.get(cat["name"], "\U0001f4c4")
-            with off_cols[idx % len(off_cols)]:
-                tier_rows = ""
-                for t in cat["tiers"]:
-                    badge_cls = f"tier-badge-{t['name']}"
-                    price = f"\u20b9{t['price_monthly']:.0f}/mo" if t["price_monthly"] else ""
-                    tier_rows += (
-                        f'<div class="tier-row">'
-                        f'<span class="tier-name {badge_cls}">{t["display_name"]}</span>'
-                        f'<span class="tier-price">{price}</span>'
-                        f'</div>'
-                    )
-                st.markdown(
-                    f'<div class="offering-card">'
-                    f'<div class="offering-cat">{icon} {cat["name"]}</div>'
-                    f'<div style="font-size:0.85rem;opacity:0.7;margin-bottom:10px;">{cat["description"]}</div>'
-                    f'{tier_rows}'
-                    f'</div>',
-                    unsafe_allow_html=True,
-                )
-    else:
-        st.info("Offerings are temporarily unavailable.")
+        st.markdown(
+            f"You have **{rec_summary['total']}** personalised recommendations. "
+        )
+        if st.button("View Recommendations \u2192"):
+            nav("recommendations")
+            st.rerun()
 
 
 # ---------------------------------------------------------------------------
@@ -585,34 +386,12 @@ elif st.session_state.page == "policies":
             if cat.get("description"):
                 st.caption(cat["description"])
 
-            btn_col1, btn_col2 = st.columns(2)
-            with btn_col1:
-                if pol.get("has_document"):
-                    if st.button("\U0001f4c4 View Document", key=f"doc_{pol['id']}"):
-                        st.session_state[f"show_doc_{pol['id']}"] = True
-                else:
-                    st.caption("No document uploaded yet")
-            with btn_col2:
-                if st.button("\U0001f4ac Ask about this policy", key=f"chat_{pol['id']}"):
-                    st.session_state.active_policy_id = pol["id"]
-                    st.session_state.chat_history = []
-                    nav("chat")
-                    st.session_state.page = "chat"
-                    st.rerun()
-
-            if st.session_state.get(f"show_doc_{pol['id']}"):
-                with st.spinner("Loading document..."):
-                    doc_resp = api_get(f"/my-policies/{pol['id']}/document/")
-                    if doc_resp.status_code == 200:
-                        st.download_button(
-                            label="\u2b07\ufe0f Download PDF",
-                            data=doc_resp.content,
-                            file_name=f"{pol['policy_number']}.pdf",
-                            mime="application/pdf",
-                            key=f"dl_{pol['id']}",
-                        )
-                    else:
-                        st.warning("Document not available.")
+            if st.button(f"Ask about this policy \u2192", key=f"chat_{pol['id']}"):
+                st.session_state.active_policy_id = pol["id"]
+                st.session_state.chat_history = []
+                nav("chat")
+                st.session_state.page = "chat"
+                st.rerun()
 
 
 # ---------------------------------------------------------------------------
@@ -729,28 +508,19 @@ elif st.session_state.page == "recommendations":
 
         if rec_type == "upgrade":
             title = f'{rec["category"]} \u2014 {rec["current_display"]} \u2192 {rec["recommended_display"]}'
-            sub_line = ""
-            if rec.get("current_price") and rec.get("recommended_price"):
-                sub_line = (
-                    f'<div style="margin:4px 0 8px;font-size:0.9rem;opacity:0.75;">'
-                    f'\u20b9{rec["current_price"]:.0f}/mo \u2192 '
-                    f'\u20b9{rec["recommended_price"]:.0f}/mo '
-                    f'(+\u20b9{rec["price_difference"]:.0f}/mo)</div>'
-                )
+            price_info = ""
+            if rec.get("price_difference") is not None:
+                price_info = f' (+\u20b9{rec["price_difference"]:.0f}/mo)'
         else:
             title = f'{rec["category"]} \u2014 Loan against {rec["tier_display"]}'
-            sub_line = (
-                f'<div style="margin:4px 0 8px;font-size:0.9rem;opacity:0.75;">'
-                f'Policy {rec["policy_number"]} \u2022 {rec["months_remaining"]} months remaining</div>'
-            )
+            price_info = f' | {rec["months_remaining"]} months remaining'
 
         desc = rec.get("description", "")
 
         st.markdown(
             f'<div class="rec-card">'
             f'<span class="{badge_cls}">{badge_txt}</span>'
-            f'<div style="font-size:1.1rem;font-weight:600;margin-bottom:2px;">{title}</div>'
-            f'{sub_line}'
+            f'<div style="font-size:1.1rem;font-weight:600;margin-bottom:6px;">{title}{price_info}</div>'
             f'<div style="opacity:0.85;line-height:1.6;">{desc}</div>'
             f'</div>',
             unsafe_allow_html=True,

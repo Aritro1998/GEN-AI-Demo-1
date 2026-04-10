@@ -2,11 +2,12 @@
 Django
 djangorestframework
 openai
-numpy
 python-dotenv
+PyPDF2
+tiktoken
+numpy
 
 # Frontend
 streamlit
-streamlit-mic-recorder
 requests
 pandas
